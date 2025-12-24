@@ -28,7 +28,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
@@ -36,33 +36,33 @@ const QuoteModal = ({ isOpen, onClose }) => {
       ></div>
 
       {/* Modal */}
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto my-auto">
+      <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto mx-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10"
+          className="absolute top-3 right-3 w-8 h-8 bg-[#8a21f0] hover:bg-[#7a1dd8] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 text-sm"
         >
           ✕
         </button>
 
         {/* Modal Content */}
-        <div className="p-8 md:p-12">
+        <div className="p-6">
           {/* Header */}
-          <div className="mb-8">
-            <div className="w-1 h-16 bg-gradient-to-b from-purple-600 to-cyan-400 mb-6"></div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          <div className="mb-6">
+            <div className="w-1 h-12 bg-[#8a21f0] mb-4"></div>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
               Let's get started
             </h2>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed">
               Providing you the perfect solution for your business needs. Let's work together and unlock doors to success.
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Full Name */}
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-600">👤</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a21f0] text-sm">👤</span>
               <input
                 type="text"
                 name="name"
@@ -70,14 +70,14 @@ const QuoteModal = ({ isOpen, onClose }) => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 transition-colors"
+                className="w-full pl-10 pr-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#8a21f0] text-gray-700 placeholder-gray-400 transition-colors"
               />
             </div>
 
             {/* Email and Phone */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-600">✉️</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a21f0] text-sm">✉️</span>
                 <input
                   type="email"
                   name="email"
@@ -85,11 +85,11 @@ const QuoteModal = ({ isOpen, onClose }) => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 transition-colors"
+                  className="w-full pl-10 pr-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#8a21f0] text-gray-700 placeholder-gray-400 transition-colors"
                 />
               </div>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-600">📞</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a21f0] text-sm">📞</span>
                 <input
                   type="tel"
                   name="phone"
@@ -97,41 +97,41 @@ const QuoteModal = ({ isOpen, onClose }) => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 transition-colors"
+                  className="w-full pl-10 pr-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#8a21f0] text-gray-700 placeholder-gray-400 transition-colors"
                 />
               </div>
             </div>
 
             {/* Message */}
             <div className="relative">
-              <span className="absolute left-4 top-6 text-purple-600">✏️</span>
+              <span className="absolute left-3 top-4 text-[#8a21f0] text-sm">✏️</span>
               <textarea
                 name="message"
                 placeholder="To help us understand better, enter a brief description about your project."
                 value={formData.message}
                 onChange={handleChange}
-                rows="5"
-                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 resize-none transition-colors"
+                rows="4"
+                className="w-full pl-10 pr-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#8a21f0] text-gray-700 placeholder-gray-400 resize-none transition-colors"
               ></textarea>
             </div>
 
             {/* Checkbox */}
-            <label className="flex items-start gap-3 cursor-pointer">
+            <label className="flex items-start gap-2 cursor-pointer">
               <input
                 type="checkbox"
                 name="agreed"
                 checked={formData.agreed}
                 onChange={handleChange}
                 required
-                className="mt-1 w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500 cursor-pointer"
+                className="mt-0.5 w-4 h-4 text-[#8a21f0] border-gray-300 rounded focus:ring-[#8a21f0] cursor-pointer"
               />
-              <span className="text-sm text-gray-700 leading-relaxed">
+              <span className="text-xs text-gray-700 leading-relaxed">
                 I have read & fully understood and agreed to the{' '}
-                <a href="/terms" className="text-purple-600 font-bold hover:underline italic">
+                <a href="/terms-conditions" className="text-[#8a21f0] font-bold hover:underline italic">
                   Terms of Use
                 </a>{' '}
                 and the{' '}
-                <a href="/privacy" className="text-purple-600 font-bold hover:underline italic">
+                <a href="/privacy-policy" className="text-[#8a21f0] font-bold hover:underline italic">
                   Privacy Policy
                 </a>
               </span>
@@ -140,7 +140,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm"
+              className="w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs"
             >
               SUBMIT
             </button>
