@@ -68,15 +68,15 @@ const HeroSection = () => {
 
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight drop-shadow-2xl">
               <span className="text-white">
-                PROFESSIONAL
+                Custom Web Design
               </span>
               <br />
               <span className="text-white">
-                LOGO DESIGN
+                Services That Convert
               </span>
               <br />
               <span className="text-white">
-                FOR YOUR BUSINESS
+                Clients
               </span>
             </h1>
 
