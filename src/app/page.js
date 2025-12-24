@@ -17,7 +17,7 @@ const page = () => {
     <div>
       <Navbar />
       <HeroSection />
-      <PortfolioSection />
+      {/* <PortfolioSection /> */}
       <PackagesSection />
       <PackageHighlight />
       <WebsiteCreationSection />

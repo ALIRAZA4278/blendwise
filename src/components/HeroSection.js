@@ -83,7 +83,7 @@ const HeroSection = () => {
             {/* Price Tag */}
             <div className="flex items-baseline gap-2">
               <p className="text-white text-sm font-semibold">Starting From</p>
-              <p className="text-3xl font-black text-[#35a5e8]">$29</p>
+              <p className="text-3xl font-black text-[#35a5e8]">$99</p>
             </div>
 
             {/* Features Grid */}
