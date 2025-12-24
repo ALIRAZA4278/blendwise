@@ -28,24 +28,20 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="relative w-full py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-      {/* Background Decorations */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-200/20 rounded-full blur-3xl animate-float-delayed"></div>
-
+    <section className="relative w-full py-20 bg-white overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="bg-gradient-to-r from-purple-600 to-cyan-400 text-white text-xs font-bold px-4 py-2 rounded-full">
+            <span className="bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase">
               TESTIMONIALS
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-purple-600 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-[#0a4d7c] mb-6 leading-tight">
             Our clients, our valuable resource
           </h2>
-          <p className="text-gray-600 text-lg max-w-5xl mx-auto leading-relaxed">
+          <p className="text-gray-700 text-base max-w-5xl mx-auto leading-relaxed">
             <span className="font-bold text-gray-900">Beyond the services we provide, our client relationships are integral to our identity. The success of our clients is not just a metric; it's a reflection of our own success.</span> Explore a selection of outstanding customer reviews below.
           </p>
         </div>
@@ -61,7 +57,7 @@ const TestimonialsSection = () => {
               }}
             >
               {/* Logo Image */}
-              <div className="mb-6 w-24 h-24 relative bg-gradient-to-br from-purple-100 to-cyan-100 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
+              <div className="mb-6 w-24 h-24 relative bg-gray-100 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
                 <Image
                   src={testimonial.logo}
                   alt={`${testimonial.name} Logo`}
@@ -74,7 +70,7 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Quote Icon */}
-              <div className="text-5xl text-purple-600/20 mb-4">"</div>
+              <div className="text-5xl text-[#0a4d7c]/20 mb-4">&quot;</div>
 
               {/* Review Text */}
               <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">

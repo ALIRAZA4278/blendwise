@@ -163,85 +163,66 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section className="relative w-full py-20 bg-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+    <section className="relative w-full py-8 bg-gray-50 overflow-hidden">
+      <div className="relative z-10 max-w-6xl mx-auto px-4">
 
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="bg-gradient-to-r from-purple-600 to-cyan-400 text-white text-xs font-bold px-4 py-2 rounded-full">
-              PRICING PLANS
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-purple-600 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6 leading-tight">
+        <div className="text-center mb-6">
+          <h2 className="font-black text-[#0a4d7c] mb-2 leading-tight" style={{ fontSize: '36px' }}>
             Optimize your business with our
             <br />
             tailored packages
           </h2>
-          <p className="text-gray-600 text-lg max-w-5xl mx-auto leading-relaxed">
+          <p className="text-gray-700 max-w-5xl mx-auto leading-relaxed" style={{ fontSize: '16px' }}>
             <span className="font-bold text-gray-900">At Blendwise INC.,</span> We serve the industry with persuasive and conceptual designs that rock the market.
             Creating an impact is what we do best and what we like to provide to every client with our pocket-friendly packages.
           </p>
         </div>
 
         {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {packages.map((pkg, index) => (
             <div
               key={pkg.id}
-              className="group relative bg-white rounded-3xl shadow-xl border-2 border-gray-100 overflow-visible flex flex-col h-full"
+              className="group relative bg-white rounded-xl shadow-xl border-2 border-gray-100 overflow-visible flex flex-col h-full"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
               }}
             >
-              {/* Badge */}
-              {pkg.badge && (
-                <div className={`absolute -top-3 -right-3 bg-gradient-to-r ${pkg.badgeColor} text-white px-6 py-2 font-black text-xs uppercase shadow-lg transform rotate-12 z-10 rounded-br-2xl`}>
-                  {pkg.badge}
-                </div>
-              )}
+              {/* Top Border */}
+              <div className="h-1 bg-[#0a4d7c]"></div>
 
-              {/* Gradient Top Border */}
-              <div className="h-2 bg-gradient-to-r from-purple-600 to-cyan-400"></div>
-
-              <div className="p-8 flex flex-col flex-1">
+              <div className="p-3 flex flex-col flex-1">
                 {/* Package Name */}
-                <div className="mb-6">
-                  <h3 className="text-2xl font-black bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-2">
+                <div className="mb-2">
+                  <h3 className="font-black text-[#0a4d7c] mb-0.5" style={{ fontSize: '16px' }}>
                     {pkg.name}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed" style={{ fontSize: '16px' }}>
                     {pkg.subtitle}
                   </p>
                 </div>
 
                 {/* Price */}
-                <div className="mb-6 bg-gradient-to-br from-purple-50 to-cyan-50 p-6 rounded-2xl">
-                  <div className="flex items-end gap-2">
-                    <span className="text-5xl font-black bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">
+                <div className="mb-2">
+                  <div className="flex items-end gap-1.5">
+                    <span className="text-lg font-black text-[#0a4d7c]">
                       ${pkg.price}
                     </span>
-                    <span className="text-gray-400 line-through text-xl mb-2">
+                    <span className="text-gray-400 line-through text-xs mb-0.5">
                       ${pkg.originalPrice}
                     </span>
                   </div>
-                  <p className="text-gray-600 text-sm mt-2">One-time payment</p>
+                  <p className="text-gray-600 text-[10px] mt-0.5">One-time payment</p>
                 </div>
 
                 {/* Features List */}
-                <div className="mb-6 flex-1 max-h-64 overflow-y-auto custom-scrollbar pr-2">
-                  <ul className="space-y-3">
+                <div className="mb-2 flex-1 max-h-32 overflow-y-auto custom-scrollbar pr-1">
+                  <ul className="space-y-1">
                     {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-gray-700">
-                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-purple-600 to-cyan-400 flex items-center justify-center mt-0.5">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <li key={idx} className="flex items-start gap-1.5 text-[10px] text-gray-700">
+                        <div className="shrink-0 w-3 h-3 rounded-full bg-[#0a4d7c] flex items-center justify-center mt-0.5">
+                          <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
@@ -251,25 +232,32 @@ const PackagesSection = () => {
                   </ul>
                 </div>
 
+                {/* CTA Button */}
+                <button className="group/btn relative w-full bg-[#0a4d7c] hover:bg-[#083d63] text-white font-bold py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] overflow-hidden mb-1.5">
+                  <span className="relative z-10">ORDER NOW</span>
+                  <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
+                </button>
+
+                {/* View Details Link */}
+                <div className="text-center mb-2">
+                  <button className="text-orange-500 font-bold hover:underline text-[10px] uppercase">
+                    VIEW DETAILS
+                  </button>
+                </div>
+
                 {/* Contact Info */}
-                <div className="flex justify-between items-center mb-6 text-xs bg-gray-50 p-4 rounded-xl mt-auto">
+                <div className="flex justify-between items-center text-[8px] border-t pt-2">
                   <div>
-                    <p className="text-gray-500 font-semibold">Speak with us</p>
-                    <p className="text-gray-900 font-bold">(646) 993-9010</p>
+                    <p className="text-[#0a4d7c] font-semibold">Share your idea?</p>
+                    <p className="text-orange-500 font-bold">+(844) 415-6378</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-gray-500 font-semibold">Want to discuss?</p>
-                    <button className="text-purple-600 font-bold hover:underline">
-                      Live Chat
+                    <p className="text-[#0a4d7c] font-semibold">Want to discuss?</p>
+                    <button className="text-orange-500 font-bold hover:underline">
+                      Live Chat Now
                     </button>
                   </div>
                 </div>
-
-                {/* CTA Button */}
-                <button className="group/btn relative w-full bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm overflow-hidden">
-                  <span className="relative z-10">START PROJECT</span>
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
-                </button>
               </div>
             </div>
           ))}
@@ -290,11 +278,11 @@ const PackagesSection = () => {
 
         .custom-scrollbar {
           scrollbar-width: thin;
-          scrollbar-color: #9333ea #f1f1f1;
+          scrollbar-color: #0a4d7c #f1f1f1;
         }
 
         .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
+          width: 4px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
@@ -304,12 +292,12 @@ const PackagesSection = () => {
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #9333ea, #06b6d4);
+          background: #0a4d7c;
           border-radius: 10px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #7c3aed, #0891b2);
+          background: #083d63;
         }
       `}</style>
     </section>

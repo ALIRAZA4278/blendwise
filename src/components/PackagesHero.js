@@ -245,7 +245,7 @@ const PackagesHero = () => {
               <br />
               <span className="bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">Tailored Packages</span>
             </h2>
-            <p className="text-gray-600 text-base max-w-4xl mx-auto leading-relaxed mt-6">
+            <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6" style={{ fontSize: '16px' }}>
               <span className="font-bold">At Blendwise INC.,</span> We serve the industry with persuasive and conceptual designs
               <br />
               that rock the market.

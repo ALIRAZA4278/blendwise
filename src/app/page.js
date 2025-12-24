@@ -5,7 +5,11 @@ import PortfolioSection from '@/components/PortfolioSection';
 import PackagesSection from '@/components/PackagesSection';
 import PackageHighlight from '@/components/PackageHighlight';
 import BrandExcellenceSection from '@/components/BrandExcellenceSection';
+import WebsiteCreationSection from '@/components/WebsiteCreationSection';
+import UniqueWebsiteSection from '@/components/UniqueWebsiteSection';
+import WebDesignServicesSection from '@/components/WebDesignServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import FAQsSection from '@/components/FAQsSection';
 import Footer from '@/components/Footer';
 
 const page = () => {
@@ -16,8 +20,12 @@ const page = () => {
       <PortfolioSection />
       <PackagesSection />
       <PackageHighlight />
-      <BrandExcellenceSection />
-      <TestimonialsSection />
+      <WebsiteCreationSection />
+      <UniqueWebsiteSection />
+      <WebDesignServicesSection />
+      {/* <BrandExcellenceSection /> */}
+      {/* <TestimonialsSection /> */}
+      <FAQsSection />
       <Footer />
     </div>
   );

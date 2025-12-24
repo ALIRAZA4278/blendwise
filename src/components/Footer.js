@@ -37,16 +37,16 @@ const Footer = () => {
   return (
     <footer className="relative w-full bg-white">
       {/* Press Logos Section */}
-      <div className="w-full py-12 bg-gray-50 border-t border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+      <div className="w-full py-6 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {pressLogos.map((logo, index) => (
               <div key={index} className="opacity-60 hover:opacity-100 transition-opacity duration-300">
                 <Image
                   src={logo}
                   alt={`Press Logo ${index + 1}`}
-                  width={120}
-                  height={40}
+                  width={80}
+                  height={30}
                   style={{ objectFit: 'contain' }}
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
@@ -59,21 +59,21 @@ const Footer = () => {
       </div>
 
       {/* Contact Form Section */}
-      <div className="w-full py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="w-full py-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
           {/* Left Side - Text */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-6 leading-tight">
+            <h2 className="font-black text-[#0a4d7c] mb-2 leading-tight" style={{ fontSize: '36px' }}>
               In search of a quote,
               <br />
               simply ask
             </h2>
-            <p className="text-gray-500 text-base leading-relaxed mb-8">
-              Whether you prefer filling out our form for a tailored response or giving us a call, <span className="font-bold">Blendwise INC</span> is ready to discuss your upcoming project. We're here to ensure the right person promptly connects with you.
+            <p className="text-gray-700 leading-relaxed mb-4" style={{ fontSize: '16px' }}>
+              Whether you prefer filling out our form for a tailored response or giving us a call, <span className="font-bold text-[#0a4d7c]">Blendwise INC</span> is ready to discuss your upcoming project. We're here to ensure the right person promptly connects with you.
             </p>
-            <div className="mt-8">
-              <svg width="150" height="100" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="mt-4">
+              <svg width="100" height="60" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 50 Q 40 10, 80 50 T 140 50" stroke="#d1d5db" strokeWidth="3" fill="none"/>
                 <path d="M135 45 L 145 50 L 135 55" fill="#d1d5db"/>
               </svg>
@@ -81,9 +81,9 @@ const Footer = () => {
           </div>
 
           {/* Right Side - Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white rounded-xl shadow-xl p-4">
+            <form onSubmit={handleSubmit} className="space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <input
                   type="text"
                   name="name"
@@ -91,7 +91,7 @@ const Footer = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
                 />
                 <input
                   type="email"
@@ -100,11 +100,11 @@ const Footer = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <input
                   type="tel"
                   name="phone"
@@ -112,7 +112,7 @@ const Footer = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
                 />
                 <input
                   type="text"
@@ -121,7 +121,7 @@ const Footer = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
                 />
               </div>
 
@@ -130,29 +130,29 @@ const Footer = () => {
                 placeholder="To help us understand better, enter a brief description about your project."
                 value={formData.description}
                 onChange={handleChange}
-                rows="5"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-700 placeholder-gray-400 resize-none"
+                rows="3"
+                className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-700 placeholder-gray-400 resize-none"
               ></textarea>
 
-              <label className="flex items-start gap-2 text-sm text-gray-700">
+              <label className="flex items-start gap-1.5 text-[10px] text-gray-700">
                 <input
                   type="checkbox"
                   name="agreed"
                   checked={formData.agreed}
                   onChange={handleChange}
                   required
-                  className="mt-1 w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                  className="mt-0.5 w-3 h-3 text-[#0a4d7c] border-gray-300 rounded focus:ring-[#0a4d7c]"
                 />
                 <span>
                   I have read & fully understood and agreed to the{' '}
-                  <a href="/terms-conditions" className="text-purple-600 font-semibold hover:underline">Terms of Use</a> and the{' '}
-                  <a href="/privacy-policy" className="text-purple-600 font-semibold hover:underline">Privacy Policy</a>
+                  <a href="/terms-conditions" className="text-[#0a4d7c] font-semibold hover:underline">Terms of Use</a> and the{' '}
+                  <a href="/privacy-policy" className="text-[#0a4d7c] font-semibold hover:underline">Privacy Policy</a>
                 </span>
               </label>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px]"
               >
                 ● Submit
               </button>
@@ -162,17 +162,17 @@ const Footer = () => {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="w-full bg-gradient-to-r from-purple-600 to-cyan-400 py-4">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white text-sm">
+      <div className="w-full bg-[#0a4d7c] py-3">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
+          <p className="text-white text-[10px]">
             Copyright © Blendwise INC. All Rights Reserved 2022
           </p>
-          <div className="flex items-center gap-6">
-            <a href="/privacy-policy" className="text-white text-sm font-semibold hover:underline">
+          <div className="flex items-center gap-3">
+            <a href="/privacy-policy" className="text-white text-[10px] font-semibold hover:underline hover:text-orange-500 transition-colors duration-300">
               Privacy Policy
             </a>
-            <span className="text-white">●</span>
-            <a href="/terms-conditions" className="text-white text-sm font-semibold hover:underline">
+            <span className="text-white text-[10px]">●</span>
+            <a href="/terms-conditions" className="text-white text-[10px] font-semibold hover:underline hover:text-orange-500 transition-colors duration-300">
               Terms & Conditions
             </a>
           </div>

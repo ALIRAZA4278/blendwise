@@ -32,19 +32,12 @@ const BrandExcellenceSection = () => {
   ];
 
   return (
-    <section className="relative w-full py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      {/* Background Decorations */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-
+    <section className="relative w-full py-20 bg-white overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Side - Image */}
           <div className="relative group">
-            {/* Glow effect behind image */}
-            <div className="absolute -inset-4 "></div>
-
             <div className="relative">
               <Image
                 src="/main/hp2.png"
@@ -61,22 +54,22 @@ const BrandExcellenceSection = () => {
           <div className="space-y-8">
             <div>
               <div className="inline-block mb-4">
-                <span className="bg-gradient-to-r from-purple-600 to-cyan-400 text-white text-xs font-bold px-4 py-2 rounded-full">
+                <span className="bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase">
                   WHY CHOOSE US
                 </span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 via-purple-400 to-cyan-400 bg-clip-text text-transparent leading-tight mb-6">
+              <h2 className="text-4xl md:text-5xl font-black text-[#0a4d7c] leading-tight mb-6">
                 Empower Your Brand with
                 Custom Logo Excellence
               </h2>
 
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-700 text-base leading-relaxed">
                 <span className="font-bold text-gray-900">Our unwavering commitment is to deliver professional logo designs meticulously tailored to your brand's culture, core values, and distinctive identity.</span> Employing a strategic approach, we specialize in crafting unique brand identities that leave a lasting impression.
               </p>
 
-              <div className="bg-gradient-to-br from-purple-50 to-cyan-50 p-6 rounded-2xl mt-6">
+              <div className="bg-gray-50 p-6 rounded-2xl mt-6 border-2 border-gray-200">
                 <p className="text-gray-700 leading-relaxed">
-                  <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400">Blendwise INC</span> boasts a track record of <span className="font-bold text-gray-900">50,000+ successfully completed projects</span>, marked by an impressive <span className="font-bold text-gray-900">98.99% success rate.</span>
+                  <span className="font-black text-[#0a4d7c]">Blendwise INC</span> boasts a track record of <span className="font-bold text-gray-900">50,000+ successfully completed projects</span>, marked by an impressive <span className="font-bold text-gray-900">98.99% success rate.</span>
                 </p>
               </div>
             </div>
@@ -86,7 +79,7 @@ const BrandExcellenceSection = () => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="group bg-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-cyan-400 rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 hover:border-transparent"
+                  className="group bg-white hover:bg-[#0a4d7c] rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-gray-200 hover:border-[#0a4d7c]"
                 >
                   <div className="flex items-center gap-3">
                     <div className="text-4xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
@@ -112,7 +105,7 @@ const BrandExcellenceSection = () => {
 
       {/* Bottom CTA Banner */}
       <div className="relative w-full mt-20">
-        <div className="relative bg-gradient-to-r from-purple-600 via-purple-500 to-cyan-400 py-12 overflow-hidden">
+        <div className="relative bg-[#0a4d7c] py-12 overflow-hidden">
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute w-96 h-96 bg-white rounded-full -top-48 -left-48 animate-pulse"></div>
@@ -152,7 +145,7 @@ const BrandExcellenceSection = () => {
 
               {/* Right - CTA Button */}
               <div>
-                <button className="group relative bg-white hover:bg-gray-50 text-purple-600 font-black px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-white/50 uppercase text-sm overflow-hidden">
+                <button className="group relative bg-orange-500 hover:bg-orange-600 text-white font-black px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-orange-500/50 uppercase text-sm overflow-hidden">
                   <span className="relative z-10 flex items-center gap-2">
                     <span>LET'S TALK</span>
                     <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>

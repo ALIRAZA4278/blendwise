@@ -45,8 +45,8 @@ const Navbar = () => {
                   href="/"
                   className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
                     pathname === '/'
-                      ? 'text-purple-600'
-                      : 'text-gray-700 hover:text-purple-600'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
                   }`}
                 >
                   HOME
@@ -55,8 +55,8 @@ const Navbar = () => {
                   href="/services"
                   className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
                     pathname === '/services'
-                      ? 'text-purple-600'
-                      : 'text-gray-700 hover:text-purple-600'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
                   }`}
                 >
                   SERVICES
@@ -65,8 +65,8 @@ const Navbar = () => {
                   href="/packages"
                   className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
                     pathname === '/packages'
-                      ? 'text-purple-600'
-                      : 'text-gray-700 hover:text-purple-600'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
                   }`}
                 >
                   PACKAGES
@@ -75,8 +75,8 @@ const Navbar = () => {
                   href="/contact"
                   className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
                     pathname === '/contact'
-                      ? 'text-purple-600'
-                      : 'text-gray-700 hover:text-purple-600'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
                   }`}
                 >
                   CONTACT US
@@ -88,7 +88,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-gradient-to-r from-purple-600 to-cyan-400 text-white font-bold text-sm px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-600/50"
+                className="bg-[#8a21f0] text-white font-bold text-sm px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-[#7a1dd8]"
               >
                 Get a Free Quote
               </button>
@@ -105,7 +105,7 @@ const Navbar = () => {
                 <div className="w-6 h-5 relative flex flex-col justify-between">
                   <span className={`w-full h-0.5 transition-all duration-300 ${
                     isMobileMenuOpen
-                      ? 'rotate-45 translate-y-2 bg-purple-600'
+                      ? 'rotate-45 translate-y-2 bg-[#8a21f0]'
                       : 'bg-gray-700'
                   }`}></span>
                   <span className={`w-full h-0.5 transition-all duration-300 ${
@@ -115,7 +115,7 @@ const Navbar = () => {
                   }`}></span>
                   <span className={`w-full h-0.5 transition-all duration-300 ${
                     isMobileMenuOpen
-                      ? '-rotate-45 -translate-y-2 bg-purple-600'
+                      ? '-rotate-45 -translate-y-2 bg-[#8a21f0]'
                       : 'bg-gray-700'
                   }`}></span>
                 </div>
@@ -139,8 +139,8 @@ const Navbar = () => {
               aria-label="Close menu"
             >
               <div className="w-6 h-5 relative flex flex-col justify-between">
-                <span className="w-full h-0.5 bg-purple-600 rotate-45 translate-y-2 transition-all duration-300"></span>
-                <span className="w-full h-0.5 bg-purple-600 -rotate-45 -translate-y-2 transition-all duration-300"></span>
+                <span className="w-full h-0.5 bg-[#8a21f0] rotate-45 translate-y-2 transition-all duration-300"></span>
+                <span className="w-full h-0.5 bg-[#8a21f0] -rotate-45 -translate-y-2 transition-all duration-300"></span>
               </div>
             </button>
           </div>
@@ -150,7 +150,7 @@ const Navbar = () => {
               href="/"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
-                pathname === '/' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+                pathname === '/' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
               }`}
             >
               HOME
@@ -159,7 +159,7 @@ const Navbar = () => {
               href="/services"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
-                pathname === '/services' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+                pathname === '/services' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
               }`}
             >
               SERVICES
@@ -168,7 +168,7 @@ const Navbar = () => {
               href="/packages"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
-                pathname === '/packages' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+                pathname === '/packages' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
               }`}
             >
               PACKAGES
@@ -177,7 +177,7 @@ const Navbar = () => {
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
-                pathname === '/contact' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+                pathname === '/contact' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
               }`}
             >
               CONTACT US
@@ -187,7 +187,7 @@ const Navbar = () => {
                 setIsMobileMenuOpen(false);
                 setIsModalOpen(true);
               }}
-              className="bg-gradient-to-r from-purple-600 to-cyan-400 text-white font-bold text-lg px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-600/50 mt-4"
+              className="bg-[#8a21f0] text-white font-bold text-lg px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-[#7a1dd8] mt-4"
             >
               Get a Free Quote
             </button>

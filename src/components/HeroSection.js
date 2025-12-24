@@ -27,42 +27,37 @@ const HeroSection = () => {
   return (
     <section className="relative w-full flex flex-col overflow-hidden">
       {/* Hero Main Section */}
-      <div className="relative w-full min-h-screen flex flex-col">
+      <div className="relative w-full min-h-[85vh] flex flex-col">
         {/* Animated Background */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/main/logo-banner.jpeg"
-            alt="Hero Banner"
-            fill
-            priority
-            style={{ objectFit: 'cover' }}
-            quality={100}
-          />
-          {/* Gradient Overlay with Animation */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/85 via-purple-600/60 to-cyan-500/70 animate-gradient-shift"></div>
+          <div className="absolute inset-0 bg-[#0a4d7c]"></div>
 
           {/* Floating Orbs */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-10 left-5 w-48 h-48 bg-cyan-400/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-5 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+
+          {/* Decorative circles */}
+          <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-white/5 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
         </div>
 
         {/* Main Content Container */}
-        <div className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style={{ paddingTop: '120px', paddingBottom: '60px' }}>
+        <div className="relative z-10 flex-1 w-full max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" style={{ paddingTop: '90px', paddingBottom: '40px' }}>
 
           {/* Left Content */}
-          <div className="text-white space-y-8 animate-fade-in-up">
+          <div className="text-white space-y-4 animate-fade-in-up">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2">
-              <span className="text-cyan-400 text-xl">⭐</span>
-              <span className="text-sm font-bold">Award Winning Design Agency</span>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5">
+              <span className="text-orange-400 text-base">⭐</span>
+              <span className="text-xs font-bold">Award Winning Design Agency</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight drop-shadow-2xl">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight drop-shadow-2xl">
+              <span className="text-white">
                 PROFESSIONAL
               </span>
               <br />
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-300 bg-clip-text text-transparent">
+              <span className="text-white">
                 LOGO DESIGN
               </span>
               <br />
@@ -73,51 +68,50 @@ const HeroSection = () => {
 
             {/* Price Tag */}
             <div className="flex items-baseline gap-2">
-              <p className="text-white text-lg font-semibold">Starting From</p>
-              <p className="text-4xl font-black bg-gradient-to-r from-cyan-400 to-white bg-clip-text text-transparent">$29</p>
+              <p className="text-white text-sm font-semibold">Starting From</p>
+              <p className="text-3xl font-black text-orange-400">$29</p>
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {[
                 '3 Custom Logos & 3 Revisions',
                 '100% Ownership Rights',
                 '100% Money Back Guarantee',
                 'Dedicated Designer'
               ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 hover:bg-white/20 transition-all duration-300">
+                  <div className="shrink-0 w-4 h-4 rounded-full bg-orange-500 flex items-center justify-center">
+                    <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm font-bold">{feature}</span>
+                  <span className="text-xs font-bold">{feature}</span>
                 </div>
               ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-4">
-              <button className="group relative bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/50 text-sm">
-                <span className="relative z-10">Chat Now - Get 70% OFF</span>
-                <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div className="flex flex-col sm:flex-row items-start gap-3">
+              <button className="group relative bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg text-xs uppercase">
+                <span className="relative z-10">Chat Now to Avail Discounts</span>
               </button>
-              <a href="tel:6469939010" className="flex items-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-                <span className="text-xl">📞</span>
+              <a href="tel:6469939010" className="flex items-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full px-3 py-1.5 hover:bg-white/20 transition-all duration-300">
+                <span className="text-base">📞</span>
                 <div>
-                  <p className="text-xs font-semibold">Call Us Now</p>
-                  <p className="text-sm font-black text-cyan-400">(646) 993-9010</p>
+                  <p className="text-[10px] font-semibold">Call Us: </p>
+                  <p className="text-xs font-black text-orange-400">(646) 993-9010</p>
                 </div>
               </a>
             </div>
 
             {/* Trust Badge */}
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center gap-3 pt-2">
               <Image
                 src="/main/score.png"
                 alt="Trustpilot Score"
-                width={250}
-                height={80}
+                width={180}
+                height={60}
                 style={{ objectFit: 'contain' }}
                 className="drop-shadow-xl"
               />
@@ -128,20 +122,20 @@ const HeroSection = () => {
           <div className="flex justify-center lg:justify-end animate-fade-in-up-delayed">
             <div className="relative">
               {/* Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-cyan-400 to-purple-600 rounded-3xl blur-xl opacity-75 animate-pulse"></div>
+              <div className="absolute -inset-1 bg-orange-500/50 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
 
-              <div className="relative bg-white rounded-3xl shadow-2xl p-6 w-full max-w-md">
-                <div className="text-center mb-5">
-                  <div className="inline-block bg-gradient-to-r from-purple-600 to-cyan-400 text-white text-xs font-bold px-3 py-1 rounded-full mb-2">
+              <div className="relative bg-white rounded-2xl shadow-2xl p-4 w-full max-w-sm">
+                <div className="text-center mb-3">
+                  <div className="inline-block bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-full mb-1.5">
                     LIMITED TIME OFFER
                   </div>
-                  <h2 className="text-2xl font-black bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">
+                  <h2 className="text-lg font-black text-[#0a4d7c]">
                     Get 70% Discount
                   </h2>
-                  <p className="text-gray-600 text-xs mt-1">Fill the form & activate your coupon</p>
+                  <p className="text-gray-600 text-[10px] mt-0.5">Fill the form & activate your coupon</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-3">
+                <form onSubmit={handleSubmit} className="space-y-2">
                   <input
                     type="text"
                     name="name"
@@ -149,7 +143,7 @@ const HeroSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 transition-all duration-300 hover:border-gray-300"
+                    className="w-full px-2.5 py-1.5 text-xs border-2 border-gray-200 rounded-lg focus:outline-none focus:border-orange-500 text-gray-700 placeholder-gray-400 transition-all duration-300"
                   />
 
                   <input
@@ -159,7 +153,7 @@ const HeroSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 transition-all duration-300 hover:border-gray-300"
+                    className="w-full px-2.5 py-1.5 text-xs border-2 border-gray-200 rounded-lg focus:outline-none focus:border-orange-500 text-gray-700 placeholder-gray-400 transition-all duration-300"
                   />
 
                   <input
@@ -169,7 +163,7 @@ const HeroSection = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 transition-all duration-300 hover:border-gray-300"
+                    className="w-full px-2.5 py-1.5 text-xs border-2 border-gray-200 rounded-lg focus:outline-none focus:border-orange-500 text-gray-700 placeholder-gray-400 transition-all duration-300"
                   />
 
                   <textarea
@@ -177,38 +171,37 @@ const HeroSection = () => {
                     placeholder="Brief description about your project..."
                     value={formData.description}
                     onChange={handleChange}
-                    rows="3"
-                    className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 text-gray-700 placeholder-gray-400 resize-none transition-all duration-300 hover:border-gray-300"
+                    rows="2"
+                    className="w-full px-2.5 py-1.5 text-xs border-2 border-gray-200 rounded-lg focus:outline-none focus:border-orange-500 text-gray-700 placeholder-gray-400 resize-none transition-all duration-300"
                   ></textarea>
 
-                  <label className="flex items-start gap-2 text-xs text-gray-600">
+                  <label className="flex items-start gap-1.5 text-[10px] text-gray-600">
                     <input
                       type="checkbox"
                       name="agreed"
                       checked={formData.agreed}
                       onChange={handleChange}
                       required
-                      className="mt-0.5 w-3.5 h-3.5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
+                      className="mt-0.5 w-3 h-3 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
                     />
-                    <span className="text-xs">
+                    <span className="text-[10px]">
                       I agree to the{' '}
-                      <a href="/terms-conditions" className="text-purple-600 font-semibold hover:underline">Terms</a> and{' '}
-                      <a href="/privacy-policy" className="text-purple-600 font-semibold hover:underline">Privacy Policy</a>
+                      <a href="/terms-conditions" className="text-orange-600 font-semibold hover:underline">Terms</a> and{' '}
+                      <a href="/privacy-policy" className="text-orange-600 font-semibold hover:underline">Privacy Policy</a>
                     </span>
                   </label>
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs relative overflow-hidden group"
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-lg transition-all duration-300 shadow-lg uppercase text-[10px]"
                   >
-                    <span className="relative z-10">🎉 ACTIVATE COUPON NOW</span>
-                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                    🎉 ACTIVATE COUPON NOW
                   </button>
                 </form>
 
                 {/* Security Badge */}
-                <div className="flex items-center justify-center gap-2 mt-4 text-gray-500 text-xs">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center justify-center gap-1.5 mt-2 text-gray-500 text-[10px]">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                   </svg>
                   <span>Your information is 100% secure</span>
@@ -219,13 +212,13 @@ const HeroSection = () => {
         </div>
 
         {/* Client Logos Section */}
-        <div className="relative z-20 w-full py-8 bg-white/10 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-6">
+        <div className="relative z-20 w-full py-4 bg-white/10 backdrop-blur-md">
+          <div className="max-w-6xl mx-auto px-4">
             <Image
               src="/main/logos.png"
               alt="Client Logos"
-              width={1400}
-              height={80}
+              width={1000}
+              height={50}
               style={{ objectFit: 'contain', width: '100%', height: 'auto', display: 'block' }}
               className="opacity-80 hover:opacity-100 transition-opacity duration-300"
             />
@@ -234,47 +227,47 @@ const HeroSection = () => {
       </div>
 
       {/* Features Banner */}
-      <div className="relative z-20 w-full shadow-2xl">
+      <div className="relative z-20 w-full shadow-xl">
         <div className="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {/* Feature 1 */}
-          <div className="group relative bg-gradient-to-br from-blue-600 to-blue-700 px-6 py-10 flex items-center gap-4 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#0a4d7c] px-4 py-5 flex items-center gap-3 hover:bg-[#083d63] transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-6xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">🏆</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">🏆</div>
             <div className="relative z-10">
-              <h3 className="text-white font-black text-xs uppercase leading-relaxed">
+              <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 Award Winning Designers Ensuring 100% Satisfaction
               </h3>
             </div>
           </div>
 
           {/* Feature 2 */}
-          <div className="group relative bg-gradient-to-br from-purple-600 to-purple-700 px-6 py-10 flex items-center gap-4 hover:from-purple-700 hover:to-purple-800 transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#0e5a8f] px-4 py-5 flex items-center gap-3 hover:bg-[#0c4d7a] transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-6xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">🌍</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">🌍</div>
             <div className="relative z-10">
-              <h3 className="text-white font-black text-xs uppercase leading-relaxed">
+              <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 10+ Years Experience Serving Clients Worldwide
               </h3>
             </div>
           </div>
 
           {/* Feature 3 */}
-          <div className="group relative bg-gradient-to-br from-cyan-500 to-cyan-600 px-6 py-10 flex items-center gap-4 hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#1267a3] px-4 py-5 flex items-center gap-3 hover:bg-[#0f568d] transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-6xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">👨‍💼</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">👨‍💼</div>
             <div className="relative z-10">
-              <h3 className="text-white font-black text-xs uppercase leading-relaxed">
+              <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 24/7 Live Customer Support Always Available
               </h3>
             </div>
           </div>
 
           {/* Feature 4 */}
-          <div className="group relative bg-gradient-to-br from-green-500 to-green-600 px-6 py-10 flex items-center gap-4 hover:from-green-600 hover:to-green-700 transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#1674b6] px-4 py-5 flex items-center gap-3 hover:bg-[#135f9b] transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-6xl transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">💰</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">💰</div>
             <div className="relative z-10">
-              <h3 className="text-white font-black text-xs uppercase leading-relaxed">
+              <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 100% Money Back Guarantee on All Services
               </h3>
             </div>
