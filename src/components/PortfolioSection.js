@@ -90,14 +90,14 @@ const PortfolioSection = () => {
 
   return (
     <section className="relative w-full py-12 bg-white overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div className="relative z-10 max-w-5xl mx-auto px-4">
 
         {/* Section Header */}
         <div className="text-center mb-8">
-          <h2 className="font-black text-[#0a4d7c] mb-3 leading-tight" style={{ fontSize: '36px' }}>
+          <h2 className="font-black text-[#8a21f0] mb-3 leading-tight" style={{ fontSize: '30px' }}>
             Our Outstanding Portfolio
           </h2>
-          <p className="text-gray-700 text-xs max-w-3xl mx-auto leading-relaxed" style={{ fontSize: '16px' }}>
+          <p className="text-gray-700 text-xs max-w-3xl mx-auto leading-relaxed" style={{ fontSize: '14px' }}>
             We take an integrated approach to creating highly engaging digital properties &
             brand focused creative solutions. We believe in providing highly creative and
             exclusive brand identities giving your business an edge over its competitors.
@@ -112,8 +112,8 @@ const PortfolioSection = () => {
               onClick={() => setActiveFilter(filter)}
               className={`relative px-4 py-1.5 rounded-full font-bold text-[10px] transition-all duration-300 border-2 ${
                 activeFilter === filter
-                  ? 'bg-[#0a4d7c] text-white border-[#0a4d7c] shadow-md'
-                  : 'bg-white text-[#0a4d7c] border-[#0a4d7c] hover:bg-[#0a4d7c] hover:text-white'
+                  ? 'bg-[#8a21f0] text-white border-[#8a21f0] shadow-md'
+                  : 'bg-white text-[#8a21f0] border-[#8a21f0] hover:bg-[#8a21f0] hover:text-white'
               }`}
             >
               <span className="relative z-10">{filter}</span>
@@ -144,7 +144,7 @@ const PortfolioSection = () => {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-[#0a4d7c]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                <div className="absolute inset-0 bg-[#8a21f0]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                   <div className="text-white">
                     <p className="text-[10px] font-semibold mb-0.5">{item.category}</p>
                     <p className="text-xs">View Details →</p>
@@ -157,7 +157,7 @@ const PortfolioSection = () => {
 
         {/* View All Button */}
         <div className="text-center mt-8">
-          <button className="group relative bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-lg uppercase text-xs">
+          <button className="group relative bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-8 py-2.5 rounded-full transition-all duration-300 shadow-lg uppercase text-xs">
             <span className="relative z-10">View All Portfolio</span>
           </button>
         </div>

@@ -164,16 +164,16 @@ const PackagesSection = () => {
 
   return (
     <section className="relative w-full py-8 bg-gray-50 overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto px-4">
+      <div className="relative z-10 max-w-5xl mx-auto px-4">
 
         {/* Section Header */}
         <div className="text-center mb-6">
-          <h2 className="font-black text-[#0a4d7c] mb-2 leading-tight" style={{ fontSize: '36px' }}>
+          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight" style={{ fontSize: '30px' }}>
             Optimize your business with our
             <br />
             tailored packages
           </h2>
-          <p className="text-gray-700 max-w-5xl mx-auto leading-relaxed" style={{ fontSize: '16px' }}>
+          <p className="text-gray-700 max-w-5xl mx-auto leading-relaxed" style={{ fontSize: '14px' }}>
             <span className="font-bold text-gray-900">At Blendwise INC.,</span> We serve the industry with persuasive and conceptual designs that rock the market.
             Creating an impact is what we do best and what we like to provide to every client with our pocket-friendly packages.
           </p>
@@ -190,15 +190,15 @@ const PackagesSection = () => {
               }}
             >
               {/* Top Border */}
-              <div className="h-1 bg-[#0a4d7c]"></div>
+              <div className="h-1 bg-[#8a21f0]"></div>
 
               <div className="p-3 flex flex-col flex-1">
                 {/* Package Name */}
                 <div className="mb-2">
-                  <h3 className="font-black text-[#0a4d7c] mb-0.5" style={{ fontSize: '16px' }}>
+                  <h3 className="font-black text-[#8a21f0] mb-0.5" style={{ fontSize: '14px' }}>
                     {pkg.name}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontSize: '16px' }}>
+                  <p className="text-gray-600 leading-relaxed" style={{ fontSize: '14px' }}>
                     {pkg.subtitle}
                   </p>
                 </div>
@@ -206,7 +206,7 @@ const PackagesSection = () => {
                 {/* Price */}
                 <div className="mb-2">
                   <div className="flex items-end gap-1.5">
-                    <span className="text-lg font-black text-[#0a4d7c]">
+                    <span className="text-lg font-black text-[#8a21f0]">
                       ${pkg.price}
                     </span>
                     <span className="text-gray-400 line-through text-xs mb-0.5">
@@ -221,7 +221,7 @@ const PackagesSection = () => {
                   <ul className="space-y-1">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-1.5 text-[10px] text-gray-700">
-                        <div className="shrink-0 w-3 h-3 rounded-full bg-[#0a4d7c] flex items-center justify-center mt-0.5">
+                        <div className="shrink-0 w-3 h-3 rounded-full bg-[#8a21f0] flex items-center justify-center mt-0.5">
                           <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -233,14 +233,14 @@ const PackagesSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="group/btn relative w-full bg-[#0a4d7c] hover:bg-[#083d63] text-white font-bold py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] overflow-hidden mb-1.5">
+                <button className="group/btn relative w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] overflow-hidden mb-1.5">
                   <span className="relative z-10">ORDER NOW</span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
                 </button>
 
                 {/* View Details Link */}
                 <div className="text-center mb-2">
-                  <button className="text-orange-500 font-bold hover:underline text-[10px] uppercase">
+                  <button className="text-[#35a5e8] font-bold hover:underline text-[10px] uppercase">
                     VIEW DETAILS
                   </button>
                 </div>
@@ -248,12 +248,12 @@ const PackagesSection = () => {
                 {/* Contact Info */}
                 <div className="flex justify-between items-center text-[8px] border-t pt-2">
                   <div>
-                    <p className="text-[#0a4d7c] font-semibold">Share your idea?</p>
-                    <p className="text-orange-500 font-bold">+(844) 415-6378</p>
+                    <p className="text-[#8a21f0] font-semibold">Share your idea?</p>
+                    <p className="text-[#35a5e8] font-bold">+(844) 415-6378</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-[#0a4d7c] font-semibold">Want to discuss?</p>
-                    <button className="text-orange-500 font-bold hover:underline">
+                    <p className="text-[#8a21f0] font-semibold">Want to discuss?</p>
+                    <button className="text-[#35a5e8] font-bold hover:underline">
                       Live Chat Now
                     </button>
                   </div>
@@ -278,7 +278,7 @@ const PackagesSection = () => {
 
         .custom-scrollbar {
           scrollbar-width: thin;
-          scrollbar-color: #0a4d7c #f1f1f1;
+          scrollbar-color: #8a21f0 #f1f1f1;
         }
 
         .custom-scrollbar::-webkit-scrollbar {
@@ -292,12 +292,12 @@ const PackagesSection = () => {
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #0a4d7c;
+          background: #8a21f0;
           border-radius: 10px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #083d63;
+          background: #7a1dd8;
         }
       `}</style>
     </section>

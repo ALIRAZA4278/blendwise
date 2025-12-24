@@ -64,13 +64,13 @@ const Footer = () => {
 
           {/* Left Side - Text */}
           <div>
-            <h2 className="font-black text-[#0a4d7c] mb-2 leading-tight" style={{ fontSize: '36px' }}>
+            <h2 className="font-black text-[#8a21f0] mb-2 leading-tight" style={{ fontSize: '36px' }}>
               In search of a quote,
               <br />
               simply ask
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4" style={{ fontSize: '16px' }}>
-              Whether you prefer filling out our form for a tailored response or giving us a call, <span className="font-bold text-[#0a4d7c]">Blendwise INC</span> is ready to discuss your upcoming project. We're here to ensure the right person promptly connects with you.
+              Whether you prefer filling out our form for a tailored response or giving us a call, <span className="font-bold text-[#8a21f0]">Blendwise INC</span> is ready to discuss your upcoming project. We're here to ensure the right person promptly connects with you.
             </p>
             <div className="mt-4">
               <svg width="100" height="60" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +91,7 @@ const Footer = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
                 />
                 <input
                   type="email"
@@ -100,7 +100,7 @@ const Footer = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
                 />
               </div>
 
@@ -112,7 +112,7 @@ const Footer = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
                 />
                 <input
                   type="text"
@@ -121,7 +121,7 @@ const Footer = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0a4d7c] text-gray-700 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
                 />
               </div>
 
@@ -131,7 +131,7 @@ const Footer = () => {
                 value={formData.description}
                 onChange={handleChange}
                 rows="3"
-                className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-700 placeholder-gray-400 resize-none"
+                className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400 resize-none"
               ></textarea>
 
               <label className="flex items-start gap-1.5 text-[10px] text-gray-700">
@@ -141,18 +141,18 @@ const Footer = () => {
                   checked={formData.agreed}
                   onChange={handleChange}
                   required
-                  className="mt-0.5 w-3 h-3 text-[#0a4d7c] border-gray-300 rounded focus:ring-[#0a4d7c]"
+                  className="mt-0.5 w-3 h-3 text-[#8a21f0] border-gray-300 rounded focus:ring-[#8a21f0]"
                 />
                 <span>
                   I have read & fully understood and agreed to the{' '}
-                  <a href="/terms-conditions" className="text-[#0a4d7c] font-semibold hover:underline">Terms of Use</a> and the{' '}
-                  <a href="/privacy-policy" className="text-[#0a4d7c] font-semibold hover:underline">Privacy Policy</a>
+                  <a href="/terms-conditions" className="text-[#8a21f0] font-semibold hover:underline">Terms of Use</a> and the{' '}
+                  <a href="/privacy-policy" className="text-[#8a21f0] font-semibold hover:underline">Privacy Policy</a>
                 </span>
               </label>
 
               <button
                 type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px]"
+                className="w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px]"
               >
                 ● Submit
               </button>
@@ -162,17 +162,17 @@ const Footer = () => {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="w-full bg-[#0a4d7c] py-3">
+      <div className="w-full bg-black py-3">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-white text-[10px]">
             Copyright © Blendwise INC. All Rights Reserved 2022
           </p>
           <div className="flex items-center gap-3">
-            <a href="/privacy-policy" className="text-white text-[10px] font-semibold hover:underline hover:text-orange-500 transition-colors duration-300">
+            <a href="/privacy-policy" className="text-white text-[10px] font-semibold hover:underline hover:text-[#35a5e8] transition-colors duration-300">
               Privacy Policy
             </a>
             <span className="text-white text-[10px]">●</span>
-            <a href="/terms-conditions" className="text-white text-[10px] font-semibold hover:underline hover:text-orange-500 transition-colors duration-300">
+            <a href="/terms-conditions" className="text-white text-[10px] font-semibold hover:underline hover:text-[#35a5e8] transition-colors duration-300">
               Terms & Conditions
             </a>
           </div>

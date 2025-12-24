@@ -23,16 +23,16 @@ const WebsiteCreationSection = () => {
 
   return (
     <section className="relative w-full py-8 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
 
           {/* Left Side - Content & Features */}
           <div className="space-y-3">
             <div>
-              <h2 className="font-black text-[#0a4d7c] leading-tight mb-2" style={{ fontSize: '36px' }}>
+              <h2 className="font-black text-[#8a21f0] leading-tight mb-2" style={{ fontSize: '30px' }}>
                 Have freedom to launch and grow your business with Custom Website Development Service.
               </h2>
-              <p className="text-gray-700 leading-relaxed" style={{ fontSize: '16px' }}>
+              <p className="text-gray-700 leading-relaxed" style={{ fontSize: '14px' }}>
                 We believe anything is possible with a good website design to engage visitors. Whether you're new to the industry to create a website for the first time or you're a long-time pro, Custom Web Guru got you covered. Just call us and find the best web developer near your region as we offer cheap custom website design packages in the market.
               </p>
             </div>
@@ -46,17 +46,17 @@ const WebsiteCreationSection = () => {
                 >
                   {/* Icon */}
                   <div className="shrink-0">
-                    <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#8a21f0]/10 rounded-lg flex items-center justify-center">
                       <span className="text-base">{feature.icon}</span>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-[#0a4d7c] font-black mb-0.5" style={{ fontSize: '16px' }}>
+                    <h3 className="text-[#8a21f0] font-black mb-0.5" style={{ fontSize: '14px' }}>
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed" style={{ fontSize: '16px' }}>
+                    <p className="text-gray-600 leading-relaxed" style={{ fontSize: '14px' }}>
                       {feature.description}
                     </p>
                   </div>
@@ -71,7 +71,7 @@ const WebsiteCreationSection = () => {
               {/* Main Large Device */}
               <div className="relative z-10">
                 <div className="relative bg-white rounded-lg shadow-lg overflow-hidden border-2 border-gray-200">
-                  <div className="aspect-[4/3] bg-[#0a4d7c] p-3">
+                  <div className="aspect-[4/3] bg-[#8a21f0] p-3">
                     <div className="bg-white/10 backdrop-blur-sm rounded-md p-2 h-full flex flex-col">
                       <div className="flex justify-between items-center mb-1.5">
                         <div className="text-white font-black text-xs">Home Improvement Studio</div>
@@ -90,7 +90,7 @@ const WebsiteCreationSection = () => {
               {/* Smaller Overlapping Devices */}
               <div className="absolute -bottom-3 -left-3 z-20 w-24">
                 <div className="bg-white rounded-md shadow-md overflow-hidden border border-gray-200">
-                  <div className="aspect-square bg-orange-500 p-1.5">
+                  <div className="aspect-square bg-[#35a5e8] p-1.5">
                     <div className="bg-white/20 rounded-sm h-full"></div>
                   </div>
                 </div>
@@ -98,15 +98,15 @@ const WebsiteCreationSection = () => {
 
               <div className="absolute top-1/2 -right-3 z-20 w-20">
                 <div className="bg-white rounded-md shadow-md overflow-hidden border border-gray-200">
-                  <div className="aspect-[3/4] bg-[#0a4d7c] p-1.5">
+                  <div className="aspect-[3/4] bg-[#8a21f0] p-1.5">
                     <div className="bg-white/20 rounded-sm h-full"></div>
                   </div>
                 </div>
               </div>
 
               {/* Background Decoration */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#00bcd4]/10 rounded-full blur-xl -z-10"></div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-orange-500/10 rounded-full blur-xl -z-10"></div>
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#35a5e8]/10 rounded-full blur-xl -z-10"></div>
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#8a21f0]/10 rounded-full blur-xl -z-10"></div>
             </div>
           </div>
         </div>

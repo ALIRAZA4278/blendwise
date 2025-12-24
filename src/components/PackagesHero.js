@@ -170,20 +170,32 @@ const PackagesHero = () => {
   ];
 
   return (
+    <>
     <div className="relative w-full">
       {/* Hero Section */}
       <section className="relative w-full min-h-[80vh] overflow-hidden">
-        {/* Background Image */}
+        {/* Animated Background */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/main/logo-banner.jpeg"
-            alt="Packages Hero Background"
-            fill
-            priority
-            style={{ objectFit: 'cover' }}
-            quality={100}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-cyan-500/60 to-gray-900/90"></div>
+          {/* Base Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0a2e] to-black"></div>
+
+          {/* Animated Grid Pattern */}
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `linear-gradient(#8a21f0 1px, transparent 1px), linear-gradient(90deg, #8a21f0 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+            animation: 'grid-move 20s linear infinite'
+          }}></div>
+
+          {/* Floating Orbs */}
+          <div className="absolute top-10 left-5 w-48 h-48 bg-[#35a5e8]/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-5 w-64 h-64 bg-[#8a21f0]/10 rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-[#35a5e8]/5 rounded-full blur-2xl animate-float"></div>
+
+          {/* Diagonal Lines */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-5">
+            <div className="absolute top-1/4 -left-1/4 w-[150%] h-px bg-gradient-to-r from-transparent via-[#35a5e8] to-transparent rotate-12"></div>
+            <div className="absolute top-2/3 -right-1/4 w-[150%] h-px bg-gradient-to-r from-transparent via-[#8a21f0] to-transparent -rotate-12"></div>
+          </div>
         </div>
 
         {/* Content Container */}
@@ -193,19 +205,19 @@ const PackagesHero = () => {
 
               {/* Left Side - Content */}
               <div className="space-y-6 max-w-xl">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-lg">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg">
                   Our Affordable
                   <br />
-                  <span className="text-cyan-400">Packages</span>
+                  <span className="text-[#35a5e8]">Packages</span>
                 </h1>
-                <p className="text-white text-lg md:text-xl leading-relaxed">
+                <p className="text-white text-sm leading-relaxed">
                   Choose from our carefully crafted packages designed to meet your business needs. From startups to enterprises, we have the perfect solution for everyone at competitive prices.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
-                  <button className="bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <button className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                     Get Started
                   </button>
-                  <a href="tel:6469939010" className="flex items-center gap-2 text-white font-bold text-lg hover:text-cyan-400 transition-colors">
+                  <a href="tel:6469939010" className="flex items-center gap-2 text-white font-bold text-sm hover:text-[#35a5e8] transition-colors">
                     <span>📞</span>
                     <span>(646) 993-9010</span>
                   </a>
@@ -239,13 +251,13 @@ const PackagesHero = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <p className="text-sm font-bold text-purple-600 tracking-widest uppercase mb-4">OUR PRICING</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            <p className="text-[10px] font-black text-[#8a21f0] tracking-widest uppercase mb-4">OUR PRICING</p>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">
               Optimize Your Business With Our
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">Tailored Packages</span>
+              <span className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] bg-clip-text text-transparent">Tailored Packages</span>
             </h2>
-            <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6" style={{ fontSize: '16px' }}>
+            <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed mt-6 text-sm">
               <span className="font-bold">At Blendwise INC.,</span> We serve the industry with persuasive and conceptual designs
               <br />
               that rock the market.
@@ -260,27 +272,27 @@ const PackagesHero = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
             <button
               onClick={() => setSelectedCategory('LOGO')}
-              className={`${selectedCategory === 'LOGO' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:from-purple-700 hover:to-cyan-500 hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-sm uppercase`}>
+              className={`${selectedCategory === 'LOGO' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:from-[#7a1dd8] hover:to-[#2a94d8] hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-xs uppercase`}>
               LOGO ↗
             </button>
             <button
               onClick={() => setSelectedCategory('WEBSITE')}
-              className={`${selectedCategory === 'WEBSITE' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm uppercase`}>
+              className={`${selectedCategory === 'WEBSITE' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-xs uppercase`}>
               WEBSITE ↗
             </button>
             <button
               onClick={() => setSelectedCategory('SOCIAL MEDIA')}
-              className={`${selectedCategory === 'SOCIAL MEDIA' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm uppercase`}>
+              className={`${selectedCategory === 'SOCIAL MEDIA' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-xs uppercase`}>
               SOCIAL MEDIA ↗
             </button>
             <button
               onClick={() => setSelectedCategory('SEO')}
-              className={`${selectedCategory === 'SEO' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm uppercase`}>
+              className={`${selectedCategory === 'SEO' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-xs uppercase`}>
               SEO (SEARCH ENGINE OPTIMIZATION) ↗
             </button>
             <button
               onClick={() => setSelectedCategory('SEM')}
-              className={`${selectedCategory === 'SEM' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm uppercase`}>
+              className={`${selectedCategory === 'SEM' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-xs uppercase`}>
               SEM (SEARCH ENGINE MARKETING) ↗
             </button>
           </div>
@@ -289,17 +301,17 @@ const PackagesHero = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
             <button
               onClick={() => setSelectedCategory('PRINT DESIGN')}
-              className={`${selectedCategory === 'PRINT DESIGN' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm uppercase`}>
+              className={`${selectedCategory === 'PRINT DESIGN' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-xs uppercase`}>
               PRINT DESIGN ↗
             </button>
             <button
               onClick={() => setSelectedCategory('E-COMMERCE')}
-              className={`${selectedCategory === 'E-COMMERCE' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm uppercase`}>
+              className={`${selectedCategory === 'E-COMMERCE' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-xs uppercase`}>
               E-COMMERCE ↗
             </button>
             <button
               onClick={() => setSelectedCategory('STATIONARY')}
-              className={`${selectedCategory === 'STATIONARY' ? 'bg-gradient-to-r from-purple-600 to-cyan-400 text-white' : 'bg-white text-purple-600 border-2 border-purple-600'} hover:bg-purple-50 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm uppercase`}>
+              className={`${selectedCategory === 'STATIONARY' ? 'bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white' : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'} hover:bg-[#8a21f0]/5 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-xs uppercase`}>
               STATIONARY ↗
             </button>
           </div>
@@ -326,32 +338,32 @@ const PackagesHero = () => {
 
                 <div className="p-8 flex flex-col flex-1">
                   {/* Package Name */}
-                  <h3 className="text-2xl font-extrabold text-purple-600 mb-2">
+                  <h3 className="text-lg font-black text-[#8a21f0] mb-2">
                     {pkg.name}
                   </h3>
 
                   {/* Subtitle */}
-                  <p className="text-gray-600 text-sm mb-6">
+                  <p className="text-gray-600 text-[10px] mb-6">
                     {pkg.subtitle}
                   </p>
 
                   {/* Price */}
                   <div className="mb-6">
-                    <span className="text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent">
+                    <span className="text-3xl font-black bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] bg-clip-text text-transparent">
                       ${pkg.price}
                     </span>
-                    <span className="text-gray-500 line-through ml-3 text-xl">
+                    <span className="text-gray-500 line-through ml-3 text-sm">
                       ${pkg.originalPrice}
                     </span>
-                    <span className="block text-gray-500 text-sm mt-1">Only</span>
+                    <span className="block text-gray-500 text-[10px] mt-1">Only</span>
                   </div>
 
                   {/* Features List */}
                   <div className="mb-6 flex-1 max-h-64 overflow-y-auto border-t border-b border-gray-200 py-4">
                     <ul className="space-y-2">
                       {pkg.features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="text-cyan-400 mt-1">●</span>
+                        <li key={index} className="flex items-start gap-2 text-[10px] text-gray-700">
+                          <span className="text-[#35a5e8] mt-1">●</span>
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -359,21 +371,21 @@ const PackagesHero = () => {
                   </div>
 
                   {/* Contact Info */}
-                  <div className="flex justify-between items-center mb-6 text-sm mt-auto">
+                  <div className="flex justify-between items-center mb-6 text-[10px] mt-auto">
                     <div>
                       <p className="text-gray-600 font-semibold">Speak with us</p>
                       <p className="text-gray-900 font-bold">(646) 993-9010</p>
                     </div>
                     <div>
                       <p className="text-gray-600 font-semibold">Want to discuss?</p>
-                      <button className="text-purple-600 font-bold hover:underline">
+                      <button className="text-[#8a21f0] font-bold hover:underline">
                         Live Chat Now
                       </button>
                     </div>
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-sm">
+                  <button className="w-full bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs">
                     START PROJECT
                   </button>
                 </div>
@@ -383,6 +395,32 @@ const PackagesHero = () => {
         </div>
       </section>
     </div>
+
+    <style jsx>{`
+      @keyframes grid-move {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(50px); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-20px) scale(1.1); }
+      }
+
+      @keyframes float-delayed {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(20px) scale(1.1); }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-float-delayed {
+        animation: float-delayed 8s ease-in-out infinite;
+      }
+    `}</style>
+    </>
   );
 };
 

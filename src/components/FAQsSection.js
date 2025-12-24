@@ -50,14 +50,14 @@ const FAQsSection = () => {
         {/* Header */}
         <div className="text-center mb-6">
           <div className="inline-block mb-2">
-            <span className="bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+            <span className="bg-[#35a5e8] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
               FAQs
             </span>
           </div>
-          <h2 className="font-black text-[#0a4d7c] mb-2 leading-tight" style={{ fontSize: '36px' }}>
+          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight" style={{ fontSize: '30px' }}>
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed" style={{ fontSize: '16px' }}>
+          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed" style={{ fontSize: '14px' }}>
             Have questions? We've got answers. If you don't find what you're looking for, feel free to contact us directly.
           </p>
         </div>
@@ -67,17 +67,17 @@ const FAQsSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="group bg-gray-50 rounded-xl border-2 border-gray-100 overflow-hidden hover:border-[#0a4d7c] transition-all duration-300"
+              className="group bg-gray-50 rounded-xl border-2 border-gray-100 overflow-hidden hover:border-[#8a21f0] transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between p-3 text-left"
               >
-                <h3 className="font-black text-[#0a4d7c] pr-4 group-hover:text-orange-500 transition-colors duration-300" style={{ fontSize: '16px' }}>
+                <h3 className="font-black text-[#8a21f0] pr-4 group-hover:text-[#35a5e8] transition-colors duration-300" style={{ fontSize: '14px' }}>
                   {faq.question}
                 </h3>
                 <div
-                  className={`shrink-0 w-5 h-5 rounded-full bg-[#0a4d7c] flex items-center justify-center transition-transform duration-300 ${
+                  className={`shrink-0 w-5 h-5 rounded-full bg-[#8a21f0] flex items-center justify-center transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 >
@@ -103,7 +103,7 @@ const FAQsSection = () => {
                 }`}
               >
                 <div className="px-3 pb-3">
-                  <p className="text-gray-600 leading-relaxed" style={{ fontSize: '16px' }}>
+                  <p className="text-gray-600 leading-relaxed" style={{ fontSize: '14px' }}>
                     {faq.answer}
                   </p>
                 </div>
@@ -120,12 +120,12 @@ const FAQsSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
             <a
               href="tel:6469939010"
-              className="group flex items-center gap-1.5 bg-[#0a4d7c] hover:bg-[#083d63] text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="group flex items-center gap-1.5 bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <span className="text-sm">📞</span>
               <span className="text-[10px]">(646) 993-9010</span>
             </a>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-[10px] uppercase">
+            <button className="bg-[#35a5e8] hover:bg-[#2590d8] text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-[10px] uppercase">
               Contact Us
             </button>
           </div>

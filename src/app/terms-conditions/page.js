@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -5,39 +6,51 @@ import Image from 'next/image';
 
 const TermsConditionsPage = () => {
   return (
+    <>
     <div>
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative w-full min-h-[60vh] overflow-hidden">
-        {/* Background Image */}
+        {/* Animated Background */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/main/logo-banner.jpeg"
-            alt="Terms & Conditions Background"
-            fill
-            priority
-            style={{ objectFit: 'cover' }}
-            quality={100}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-cyan-500/60 to-gray-900/90"></div>
+          {/* Base Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0a2e] to-black"></div>
+
+          {/* Animated Grid Pattern */}
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `linear-gradient(#8a21f0 1px, transparent 1px), linear-gradient(90deg, #8a21f0 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+            animation: 'grid-move 20s linear infinite'
+          }}></div>
+
+          {/* Floating Orbs */}
+          <div className="absolute top-10 left-5 w-48 h-48 bg-[#35a5e8]/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-5 w-64 h-64 bg-[#8a21f0]/10 rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-[#35a5e8]/5 rounded-full blur-2xl animate-float"></div>
+
+          {/* Diagonal Lines */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-5">
+            <div className="absolute top-1/4 -left-1/4 w-[150%] h-px bg-gradient-to-r from-transparent via-[#35a5e8] to-transparent rotate-12"></div>
+            <div className="absolute top-2/3 -right-1/4 w-[150%] h-px bg-gradient-to-r from-transparent via-[#8a21f0] to-transparent -rotate-12"></div>
+          </div>
         </div>
 
         {/* Content */}
         <div className="relative z-10 w-full h-full">
           <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-center" style={{ minHeight: '60vh', paddingTop: '100px' }}>
             <div className="text-center">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-lg mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg mb-6">
                 Terms & Conditions
               </h1>
-              <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              <p className="text-white text-sm max-w-3xl mx-auto leading-relaxed">
                 Our Terms and Conditions outline the rules, rights, and responsibilities for using our services, ensuring a fair and transparent experience for all users.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-                <button className="bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <button className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                   Get Started
                 </button>
-                <button className="bg-white hover:bg-gray-100 text-purple-600 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <button className="bg-white hover:bg-gray-100 text-[#8a21f0] font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                   Live Chat
                 </button>
               </div>
@@ -50,10 +63,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Revision Policy
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               We provide revision depending upon the package you selected. Customers can ask us for unlimited free revisions and we will revise their design without any additional charges provided that the design and concept remains the same. Revision Turnaround Time would be 48 hours.
             </p>
           </div>
@@ -64,10 +77,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Refund Policy / Money Back Guarantee
             </h3>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <div className="space-y-6 text-sm text-gray-700 leading-relaxed">
               <p>
                 In any event, any deposited funds for a project shall not be subject to refund after delivery if the initial design concepts are approved, or a change is requested unless Blendwise cancels or terminates your Contract for a reason other than your breach or non-performance.
               </p>
@@ -112,10 +125,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               How to Claim Your Refund
             </h3>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <div className="space-y-6 text-sm text-gray-700 leading-relaxed">
               <p className="font-semibold text-gray-900">
                 To assure your refund request is approved, please make sure you meet the following requirements:
               </p>
@@ -123,9 +136,9 @@ const TermsConditionsPage = () => {
               <div className="bg-gray-50 p-6 rounded-2xl">
                 <p className="font-semibold mb-4">1. Claim your refund specifying your concern by contacting us via any of the following three modes:</p>
                 <ul className="space-y-2 pl-6">
-                  <li>i. Toll free # <a href="tel:6469939010" className="text-purple-600 hover:text-cyan-400 font-semibold">(646) 993-9010</a></li>
+                  <li>i. Toll free # <a href="tel:6469939010" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">(646) 993-9010</a></li>
                   <li>ii. Live Chat</li>
-                  <li>iii. Email: <a href="mailto:info@blendwise.com" className="text-purple-600 hover:text-cyan-400 font-semibold">info@blendwise.com</a></li>
+                  <li>iii. Email: <a href="mailto:info@blendwise.com" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">info@blendwise.com</a></li>
                 </ul>
               </div>
 
@@ -139,7 +152,7 @@ const TermsConditionsPage = () => {
               </p>
 
               <p>
-                If you have any questions or concerns about our Refund Policy, please contact us at <a href="mailto:info@blendwise.com" className="text-purple-600 hover:text-cyan-400 font-semibold">info@blendwise.com</a>.
+                If you have any questions or concerns about our Refund Policy, please contact us at <a href="mailto:info@blendwise.com" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">info@blendwise.com</a>.
               </p>
             </div>
           </div>
@@ -150,10 +163,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               My Account
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               The My Account area is a convenient way to communicate. It is your sole responsibility to check the account area to address any queries, concerns, or additional instructions required by the designer. Not checking or using the Account Area frequently shall not provide you adequate grounds for a refund. However, if you are uncertain how to use the area, you may contact the customer support team at any time for assistance.
             </p>
           </div>
@@ -164,10 +177,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Quality Assurance Policy
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               In order to provide you the desired satisfaction, our designers don't deviate from the specifications provided by you in the order form. The designs are created after a thorough research which ensures the design quality and uniqueness.
             </p>
           </div>
@@ -178,10 +191,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               100% Satisfaction Guarantee
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               We rework the ordered design and keep on revising it until you are 100% satisfied (depending upon your package).
             </p>
           </div>
@@ -192,10 +205,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Domain and Hosting
             </h3>
-            <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
               <p>Domain and hosting will be provided for free with website packages, where applicable.</p>
 
               <p>All the email accounts provided with website packages can be configured on third party email soft-wares such as outlook. Each email account will have 10MB of space.</p>
@@ -210,10 +223,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Delivery Policy
             </h3>
-            <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
               <p>
                 All design order files are delivered to My Account as per the date specified on the "Order Confirmation". An e-mail is also sent to inform the client about their design order delivery made to their specific account area. All policies pertaining to revision & refund are subject to date and time of design order delivered to client's account area.
               </p>
@@ -230,10 +243,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Record Maintenance
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               We keep a record of your finalized design once we provide you the final files. If you require the final files again in the future we can send them to you at your request.
             </p>
           </div>
@@ -244,10 +257,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Customer Support
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               We offer 24-Hour Customer Support to address your queries and questions. You can contact us any time and we guarantee to respond immediately.
             </p>
           </div>
@@ -258,10 +271,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               Communication Policy
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               YOU agree that Blendwise is not liable for any correspondence from email address(es) other than the ones followed by our own domain i.e. "info@blendwise.com" or/and any toll free number that is not mentioned on our website. Blendwise should not be held responsible for any damage(s) caused by such correspondence. We only take responsibility of any communication through email address(es) under our own domain name or/and via toll free number i.e. already mentioned on Blendwise Website.
             </p>
           </div>
@@ -272,10 +285,10 @@ const TermsConditionsPage = () => {
       <section className="relative w-full py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
               100% Unique Design Guarantee
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               At Blendwise we guarantee that all of our customers' logos are made from scratch. This way you will have a logo that is tailor made for your requirements. We guarantee that your logo will be unique and impress your clientele.
             </p>
           </div>
@@ -283,15 +296,15 @@ const TermsConditionsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative w-full py-16 bg-gradient-to-r from-purple-600 to-cyan-400">
+      <section className="relative w-full py-16 bg-gradient-to-r from-[#8a21f0] to-[#35a5e8]">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+          <h2 className="text-2xl md:text-3xl font-black text-white mb-6">
             Have Questions About Our Terms & Conditions?
           </h2>
-          <p className="text-white text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white text-sm mb-8 max-w-2xl mx-auto">
             Our team is here to help clarify any questions you may have about our policies and services
           </p>
-          <button className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <button className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
             Contact Us Today
           </button>
         </div>
@@ -299,6 +312,32 @@ const TermsConditionsPage = () => {
 
       <Footer />
     </div>
+
+    <style jsx>{`
+      @keyframes grid-move {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(50px); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-20px) scale(1.1); }
+      }
+
+      @keyframes float-delayed {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(20px) scale(1.1); }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-float-delayed {
+        animation: float-delayed 8s ease-in-out infinite;
+      }
+    `}</style>
+    </>
   );
 };
 

@@ -139,7 +139,16 @@ const ServicesHero = () => {
             style={{ objectFit: 'cover' }}
             quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/70 via-cyan-500/50 to-gray-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0a2e] to-black"></div>
+          {/* Animated Grid Pattern */}
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `linear-gradient(#8a21f0 1px, transparent 1px), linear-gradient(90deg, #8a21f0 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+            animation: 'grid-move 20s linear infinite'
+          }}></div>
+          {/* Floating Orbs */}
+          <div className="absolute top-10 left-5 w-48 h-48 bg-[#35a5e8]/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-5 w-64 h-64 bg-[#8a21f0]/10 rounded-full blur-3xl animate-float-delayed"></div>
         </div>
 
         {/* Content Container */}
@@ -149,21 +158,21 @@ const ServicesHero = () => {
 
               {/* Left Side - Content */}
               <div className="space-y-6 max-w-xl">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-lg">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg">
                   Our Creative
                   <br />
-                  <span className="text-cyan-400">
+                  <span className="text-[#35a5e8]">
                     Services
                   </span>
                 </h1>
-                <p className="text-white text-lg md:text-xl leading-relaxed">
+                <p className="text-white text-sm md:text-base leading-relaxed">
                   We offer a comprehensive range of design and branding services to help your business stand out in the digital landscape.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
-                  <button className="bg-gradient-to-r from-purple-600 to-cyan-400 hover:from-purple-700 hover:to-cyan-500 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <button className="bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs uppercase">
                     Get Started
                   </button>
-                  <a href="tel:6469939010" className="flex items-center gap-2 text-white font-bold text-lg hover:text-cyan-400 transition-colors">
+                  <a href="tel:6469939010" className="flex items-center gap-2 text-white font-bold text-sm hover:text-[#35a5e8] transition-colors">
                     <span>📞</span>
                     <span>(646) 993-9010</span>
                   </a>
@@ -197,8 +206,8 @@ const ServicesHero = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-4">
-            <p className="text-sm font-black text-purple-600 tracking-widest uppercase mb-4">CUSTOMIZED SERVICE</p>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 leading-tight">
+            <p className="text-[10px] font-black text-[#8a21f0] tracking-widest uppercase mb-4">CUSTOMIZED SERVICE</p>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-tight">
               Looking for customized service?
               <br />
               Let's talk customized design service.
@@ -213,7 +222,7 @@ const ServicesHero = () => {
                 onClick={() => setSelectedCard(service.id)}
                 className={`${
                   selectedCard === service.id
-                    ? 'bg-gradient-to-br from-purple-600 to-cyan-400 text-white'
+                    ? 'bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] text-white'
                     : 'bg-white text-gray-900 border border-gray-100'
                 } rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden cursor-pointer`}
               >
@@ -225,11 +234,11 @@ const ServicesHero = () => {
                     selectedCard === service.id ? 'bg-white/20' : 'bg-gray-100'
                   } rounded-full flex items-center justify-center mx-auto mb-6`}>
                     <span className={`text-4xl ${
-                      selectedCard === service.id ? '' : 'text-purple-600'
+                      selectedCard === service.id ? '' : 'text-[#8a21f0]'
                     }`}>{service.icon}</span>
                   </div>
-                  <h3 className="text-2xl font-black mb-4">{service.title}</h3>
-                  <p className={`text-base font-medium leading-relaxed ${
+                  <h3 className="text-sm font-black mb-2">{service.title}</h3>
+                  <p className={`text-[10px] font-medium leading-relaxed ${
                     selectedCard === service.id ? 'opacity-95' : 'text-gray-600'
                   }`}>
                     {service.description}
@@ -246,10 +255,10 @@ const ServicesHero = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-4">
+            <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-4">
               Our Services
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            <p className="text-gray-600 text-sm max-w-3xl mx-auto">
               Comprehensive digital solutions tailored to your business needs
             </p>
           </div>
@@ -258,80 +267,80 @@ const ServicesHero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {/* Graphic Design */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">🎨</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 Graphic Design
               </h3>
             </div>
 
             {/* UI/UX Design */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">✨</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 UI/UX Design
               </h3>
             </div>
 
             {/* Website */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">💻</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 Website
               </h3>
             </div>
 
             {/* SMM */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">📱</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 SMM
               </h3>
             </div>
 
             {/* SEO */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">🔍</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 SEO
               </h3>
             </div>
 
             {/* SEM */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">📊</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 SEM
               </h3>
             </div>
 
             {/* Application Development */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">📲</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 Application Development
               </h3>
             </div>
 
             {/* Video Animation */}
             <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
                 <span className="text-3xl">🎬</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 text-center">
+              <h3 className="text-xs font-bold text-gray-900 text-center">
                 Video Animation
               </h3>
             </div>
@@ -347,10 +356,10 @@ const ServicesHero = () => {
 
               {/* Content Side */}
               <div className={`${service.imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-6">
+                <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-6">
                   {service.title}
                 </h2>
-                <p className="text-gray-700 text-base leading-relaxed mb-8">
+                <p className="text-gray-700 text-sm leading-relaxed mb-8">
                   {service.description}
                 </p>
 
@@ -366,8 +375,8 @@ const ServicesHero = () => {
                         key={idx}
                         onClick={() => handleButtonClick(service.contentType, button)}
                         className={`${isActive
-                          ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white'
-                          : 'bg-white text-purple-600 border-2 border-purple-600'
+                          ? 'bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white'
+                          : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'
                         } hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm cursor-pointer`}
                       >
                         {button}
@@ -386,8 +395,8 @@ const ServicesHero = () => {
                         key={idx}
                         onClick={() => handleButtonClick(service.contentType, button)}
                         className={`${isActive
-                          ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white'
-                          : 'bg-white text-purple-600 border-2 border-purple-600'
+                          ? 'bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white'
+                          : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'
                         } hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm cursor-pointer`}
                       >
                         {button}
@@ -438,30 +447,30 @@ const ServicesHero = () => {
 
             {/* Right Side - Content */}
             <div className="lg:order-2">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-6">
+              <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-6">
                 Shopify Store Development
               </h2>
-              <p className="text-gray-700 text-base leading-relaxed mb-8">
+              <p className="text-gray-700 text-sm leading-relaxed mb-8">
                 Professional Shopify store setup and customization including theme design, app integration, payment gateway setup, and inventory management. Create a powerful online store that converts visitors into customers and drives sales growth.
               </p>
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-3">
-                <button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   SHOPIFY STORE →
                 </button>
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   WOOCOMMERCE →
                 </button>
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   MAGENTO →
                 </button>
               </div>
               <div className="flex flex-wrap gap-3 mt-3">
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   PAYMENT GATEWAY →
                 </button>
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   INVENTORY →
                 </button>
               </div>
@@ -478,30 +487,30 @@ const ServicesHero = () => {
 
             {/* Left Side - Content */}
             <div className="lg:order-1">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-6">
+              <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-6">
                 Print Design Services
               </h2>
-              <p className="text-gray-700 text-base leading-relaxed mb-8">
+              <p className="text-gray-700 text-sm leading-relaxed mb-8">
                 Professional print design solutions including business cards, brochures, flyers, banners, and marketing materials. We create visually stunning designs that effectively communicate your brand message and leave lasting impressions on your audience.
               </p>
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-3">
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   WORDPRESS →
                 </button>
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   SHOPIFY →
                 </button>
-                <button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   PRINT DESIGN →
                 </button>
               </div>
               <div className="flex flex-wrap gap-3 mt-3">
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   E-COMMERCE →
                 </button>
-                <button className="bg-white text-purple-600 border-2 border-purple-600 hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
+                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
                   STATIONARY →
                 </button>
               </div>
@@ -531,42 +540,42 @@ const ServicesHero = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-purple-600 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <h3 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-3">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-[#8a21f0] hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <h3 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-3">
                 1.5k
               </h3>
-              <p className="text-xl font-bold text-gray-900 mb-3">Projects Completed</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm font-bold text-gray-900 mb-2">Projects Completed</p>
+              <p className="text-[10px] text-gray-600">
                 Lorem ipsum available, but majority have suffered alteration in some form, by injected randomised words.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-purple-600 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <h3 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-3">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-[#8a21f0] hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <h3 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-3">
                 15+
               </h3>
-              <p className="text-xl font-bold text-gray-900 mb-3">Team Members</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm font-bold text-gray-900 mb-2">Team Members</p>
+              <p className="text-[10px] text-gray-600">
                 Lorem ipsum available, but majority have suffered alteration in some form, by injected randomised words.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-purple-600 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <h3 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-3">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-[#8a21f0] hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <h3 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-3">
                 99%
               </h3>
-              <p className="text-xl font-bold text-gray-900 mb-3">5 Ratings</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm font-bold text-gray-900 mb-2">5 Ratings</p>
+              <p className="text-[10px] text-gray-600">
                 Lorem ipsum available, but majority have suffered alteration in some form, by injected randomised words.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-purple-600 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <h3 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-3">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-[#8a21f0] hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <h3 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-3">
                 2+
               </h3>
-              <p className="text-xl font-bold text-gray-900 mb-3">Awards Achievement</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm font-bold text-gray-900 mb-2">Awards Achievement</p>
+              <p className="text-[10px] text-gray-600">
                 Lorem ipsum available, but majority have suffered alteration in some form, by injected randomised words.
               </p>
             </div>
@@ -575,41 +584,66 @@ const ServicesHero = () => {
           {/* Press Logos */}
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <span className="text-2xl font-bold text-gray-600">Entrepreneur</span>
+              <span className="text-sm font-bold text-gray-600">Entrepreneur</span>
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <span className="text-3xl font-bold text-gray-600">Inc.</span>
+              <span className="text-sm font-bold text-gray-600">Inc.</span>
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <span className="text-3xl font-bold text-gray-600">TNW</span>
+              <span className="text-sm font-bold text-gray-600">TNW</span>
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <span className="text-2xl font-bold text-gray-600">technasia</span>
+              <span className="text-sm font-bold text-gray-600">technasia</span>
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <span className="text-3xl font-bold text-gray-600">Forbes</span>
+              <span className="text-sm font-bold text-gray-600">Forbes</span>
             </div>
             <div className="grayscale hover:grayscale-0 transition-all duration-300">
-              <span className="text-xl font-bold text-gray-600">THE HUFFINGTON POST</span>
+              <span className="text-sm font-bold text-gray-600">THE HUFFINGTON POST</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative w-full py-16 bg-gradient-to-r from-purple-600 to-cyan-400">
+      <section className="relative w-full py-16 bg-[#8a21f0]">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+          <h2 className="text-2xl md:text-3xl font-black text-white mb-6">
             Ready to Start Your Project?
           </h2>
-          <p className="text-white text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white text-sm mb-8 max-w-2xl mx-auto">
             Let's bring your vision to life with our creative expertise and dedication to excellence
           </p>
-          <button className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <button className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs uppercase">
             Get Free Consultation
           </button>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes grid-move {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(50px); }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(20px) scale(1.1); }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+          animation: float-delayed 8s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 };
