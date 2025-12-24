@@ -145,8 +145,8 @@ const Footer = () => {
                 />
                 <span>
                   I have read & fully understood and agreed to the{' '}
-                  <a href="/terms" className="text-purple-600 font-semibold hover:underline">Terms of Use</a> and the{' '}
-                  <a href="/privacy" className="text-purple-600 font-semibold hover:underline">Privacy Policy</a>
+                  <a href="/terms-conditions" className="text-purple-600 font-semibold hover:underline">Terms of Use</a> and the{' '}
+                  <a href="/privacy-policy" className="text-purple-600 font-semibold hover:underline">Privacy Policy</a>
                 </span>
               </label>
 
@@ -168,11 +168,11 @@ const Footer = () => {
             Copyright © Blendwise INC. All Rights Reserved 2022
           </p>
           <div className="flex items-center gap-6">
-            <a href="/privacy" className="text-white text-sm font-semibold hover:underline">
+            <a href="/privacy-policy" className="text-white text-sm font-semibold hover:underline">
               Privacy Policy
             </a>
             <span className="text-white">●</span>
-            <a href="/terms" className="text-white text-sm font-semibold hover:underline">
+            <a href="/terms-conditions" className="text-white text-sm font-semibold hover:underline">
               Terms & Conditions
             </a>
           </div>

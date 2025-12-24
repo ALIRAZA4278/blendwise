@@ -241,6 +241,104 @@ const ServicesHero = () => {
         </div>
       </section>
 
+      {/* Main Services Grid Section */}
+      <section className="relative w-full py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-4">
+              Our Services
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Comprehensive digital solutions tailored to your business needs
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Graphic Design */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">🎨</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                Graphic Design
+              </h3>
+            </div>
+
+            {/* UI/UX Design */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">✨</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                UI/UX Design
+              </h3>
+            </div>
+
+            {/* Website */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">💻</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                Website
+              </h3>
+            </div>
+
+            {/* SMM */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">📱</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                SMM
+              </h3>
+            </div>
+
+            {/* SEO */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">🔍</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                SEO
+              </h3>
+            </div>
+
+            {/* SEM */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">📊</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                SEM
+              </h3>
+            </div>
+
+            {/* Application Development */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">📲</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                Application Development
+              </h3>
+            </div>
+
+            {/* Video Animation */}
+            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-400 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">🎬</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 text-center">
+                Video Animation
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Detailed Services Sections */}
       {detailedServices.map((service, index) => (
         <section key={service.id} className={`relative w-full py-20 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>

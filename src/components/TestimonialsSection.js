@@ -28,28 +28,40 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="relative w-full py-20 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative w-full py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-200/20 rounded-full blur-3xl animate-float-delayed"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-transparent mb-6">
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="bg-gradient-to-r from-purple-600 to-cyan-400 text-white text-xs font-bold px-4 py-2 rounded-full">
+              TESTIMONIALS
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-purple-600 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6 leading-tight">
             Our clients, our valuable resource
           </h2>
-          <p className="text-gray-800 text-base max-w-5xl mx-auto leading-relaxed">
-            <span className="font-bold">Beyond the services we provide, our client relationships are integral to our identity. The success of our clients is not just a metric; it's a reflection of our own success.</span> Explore a selection of outstanding customer reviews below, showcasing the testament to our commitment and the impact we make in collaboration with those we proudly serve.
+          <p className="text-gray-600 text-lg max-w-5xl mx-auto leading-relaxed">
+            <span className="font-bold text-gray-900">Beyond the services we provide, our client relationships are integral to our identity. The success of our clients is not just a metric; it's a reflection of our own success.</span> Explore a selection of outstanding customer reviews below.
           </p>
         </div>
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="group relative bg-white rounded-3xl shadow-xl p-8 flex flex-col items-center text-center border-2 border-gray-100"
+              style={{
+                animation: `fadeInUp 0.6s ease-out ${index * 0.2}s both`
+              }}
             >
               {/* Logo Image */}
-              <div className="mb-6 w-32 h-32 relative bg-gray-200 rounded-full flex items-center justify-center">
+              <div className="mb-6 w-24 h-24 relative bg-gradient-to-br from-purple-100 to-cyan-100 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
                 <Image
                   src={testimonial.logo}
                   alt={`${testimonial.name} Logo`}
@@ -61,45 +73,65 @@ const TestimonialsSection = () => {
                 />
               </div>
 
+              {/* Quote Icon */}
+              <div className="text-5xl text-purple-600/20 mb-4">"</div>
+
               {/* Review Text */}
               <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
                 {testimonial.text}
               </p>
 
               {/* Name and Trustpilot */}
-              <div className="w-full border-t border-gray-200 pt-4">
-                <h4 className="text-gray-900 font-extrabold text-lg mb-2">
+              <div className="w-full border-t-2 border-gray-100 pt-6">
+                <h4 className="text-gray-900 font-black text-lg mb-3">
                   {testimonial.name}
                 </h4>
                 {testimonial.trustpilot && (
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-sm font-bold text-gray-700">TRUSTPILOT</span>
+                  <div className="flex flex-col items-center gap-2">
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-green-600 text-lg">★</span>
+                        <span key={i} className="text-green-500 text-xl">★</span>
                       ))}
                     </div>
+                    <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Trustpilot Review</span>
                   </div>
                 )}
               </div>
             </div>
           ))}
         </div>
-
-        {/* Bottom Trustpilot Logo */}
-        <div className="text-center mt-16">
-          <Image
-            src="/main/aut2.jpg"
-            alt="Trustpilot Authorized"
-            width={200}
-            height={80}
-            style={{ objectFit: 'contain', margin: '0 auto' }}
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(20px) scale(1.1); }
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+          animation: float-delayed 8s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 };
