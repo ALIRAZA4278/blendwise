@@ -178,12 +178,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Chat Button */}
-      <button className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center gap-2 z-50">
-        <span className="text-xl">💬</span>
-        <span className="font-bold text-sm">Chat</span>
-      </button>
     </footer>
   );
 };
