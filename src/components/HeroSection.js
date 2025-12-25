@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import QuoteModal from './QuoteModal';
 
 const HeroSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -107,7 +109,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start gap-3">
-              <button className="group relative bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg text-xs uppercase">
+              <button onClick={() => setIsModalOpen(true)} className="group relative bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg text-xs uppercase">
                 <span className="relative z-10">Chat Now to Avail Discounts</span>
               </button>
               <a href="tel:6469939010" className="flex items-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full px-3 py-1.5 hover:bg-white/20 transition-all duration-300">
@@ -343,6 +345,9 @@ const HeroSection = () => {
           animation: fade-in-up 0.8s ease-out 0.3s both;
         }
       `}</style>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

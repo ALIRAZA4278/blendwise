@@ -1,9 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import QuoteModal from './QuoteModal';
 
 const PackagesHero = () => {
   const [selectedCategory, setSelectedCategory] = useState('LOGO');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const packages = [
     {
@@ -214,7 +216,7 @@ const PackagesHero = () => {
                   Choose from our carefully crafted packages designed to meet your business needs. From startups to enterprises, we have the perfect solution for everyone at competitive prices.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
-                  <button className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
+                  <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                     Get Started
                   </button>
                   <a href="tel:6469939010" className="flex items-center gap-2 text-white font-bold text-sm hover:text-[#35a5e8] transition-colors">
@@ -374,18 +376,18 @@ const PackagesHero = () => {
                   <div className="flex justify-between items-center mb-6 text-[10px] mt-auto">
                     <div>
                       <p className="text-gray-600 font-semibold">Speak with us</p>
-                      <p className="text-gray-900 font-bold">(646) 993-9010</p>
+                      <a href="tel:6469939010" className="text-gray-900 font-bold hover:text-[#8a21f0] transition-colors">(646) 993-9010</a>
                     </div>
                     <div>
                       <p className="text-gray-600 font-semibold">Want to discuss?</p>
-                      <button className="text-[#8a21f0] font-bold hover:underline">
+                      <button onClick={() => setIsModalOpen(true)} className="text-[#8a21f0] font-bold hover:underline">
                         Live Chat Now
                       </button>
                     </div>
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs">
+                  <button onClick={() => setIsModalOpen(true)} className="w-full bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs">
                     START PROJECT
                   </button>
                 </div>
@@ -420,6 +422,9 @@ const PackagesHero = () => {
         animation: float-delayed 8s ease-in-out infinite;
       }
     `}</style>
+
+    {/* Quote Modal */}
+    <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };

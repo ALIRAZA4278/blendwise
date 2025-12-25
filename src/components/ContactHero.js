@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import QuoteModal from './QuoteModal';
 
 const ContactHero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -65,10 +67,10 @@ const ContactHero = () => {
                 Have a question or ready to start your project? We're here to help! Reach out to our team and let's discuss how we can bring your vision to life with our expert logo design, branding, and digital solutions.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <button className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
+                <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                   Get Started
                 </button>
-                <button className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
+                <button onClick={() => setIsModalOpen(true)} className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                   Live Chat
                 </button>
               </div>
@@ -170,7 +172,7 @@ const ContactHero = () => {
               </div>
               <h3 className="text-xl font-black text-gray-900 mb-3">Start Live Chat</h3>
               <p className="text-gray-600 mb-4 text-xs">With one of our representatives and get all the assistance that you need.</p>
-              <button className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-xs">
+              <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-xs">
                 Start Chat Now
               </button>
             </div>
@@ -232,6 +234,9 @@ const ContactHero = () => {
         animation: float-delayed 8s ease-in-out infinite;
       }
     `}</style>
+
+    {/* Quote Modal */}
+    <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };

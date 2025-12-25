@@ -1,19 +1,30 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import QuoteModal from './QuoteModal';
 
 const ServicesHero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(1);
   const [seoContent, setSeoContent] = useState('ON-PAGE SEO');
   const [wordpressContent, setWordpressContent] = useState('CUSTOM THEMES');
   const [socialContent, setSocialContent] = useState('FACEBOOK');
 
   const customizedServices = [
-    { id: 1, icon: '📦', title: 'Custom Package', description: 'It is a long established fact that a reader will' },
-    { id: 2, icon: '💬', title: 'Live Chat', description: 'It is a long established fact that a reader will' },
-    { id: 3, icon: '🎧', title: 'Call +124-567-890', description: 'It is a long established fact that a reader will' },
-    { id: 4, icon: '📞', title: 'Request Call Back', description: 'It is a long established fact that a reader will' }
+    { id: 1, icon: '📦', title: 'Custom Package', description: 'It is a long established fact that a reader will', action: 'modal' },
+    { id: 2, icon: '💬', title: 'Live Chat', description: 'It is a long established fact that a reader will', action: 'modal' },
+    { id: 3, icon: '🎧', title: 'Call +124-567-890', description: 'It is a long established fact that a reader will', action: 'tel:6469939010' },
+    { id: 4, icon: '📞', title: 'Request Call Back', description: 'It is a long established fact that a reader will', action: 'modal' }
   ];
+
+  const handleServiceClick = (service) => {
+    setSelectedCard(service.id);
+    if (service.action === 'modal') {
+      setIsModalOpen(true);
+    } else if (service.action.startsWith('tel:')) {
+      window.location.href = service.action;
+    }
+  };
 
   const serviceContent = {
     seo: {
@@ -169,7 +180,7 @@ const ServicesHero = () => {
                   We offer a comprehensive range of design and branding services to help your business stand out in the digital landscape.
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
-                  <button className="bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs uppercase">
+                  <button onClick={() => setIsModalOpen(true)} className="bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs uppercase">
                     Get Started
                   </button>
                   <a href="tel:6469939010" className="flex items-center gap-2 text-white font-bold text-sm hover:text-[#35a5e8] transition-colors">
@@ -219,7 +230,7 @@ const ServicesHero = () => {
             {customizedServices.map((service) => (
               <div
                 key={service.id}
-                onClick={() => setSelectedCard(service.id)}
+                onClick={() => handleServiceClick(service)}
                 className={`${
                   selectedCard === service.id
                     ? 'bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] text-white'
@@ -614,7 +625,7 @@ const ServicesHero = () => {
           <p className="text-white text-sm mb-8 max-w-2xl mx-auto">
             Let's bring your vision to life with our creative expertise and dedication to excellence
           </p>
-          <button className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs uppercase">
+          <button onClick={() => setIsModalOpen(true)} className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs uppercase">
             Get Free Consultation
           </button>
         </div>
@@ -644,6 +655,9 @@ const ServicesHero = () => {
           animation: float-delayed 8s ease-in-out infinite;
         }
       `}</style>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
