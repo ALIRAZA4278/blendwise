@@ -68,11 +68,11 @@ const WebDesignServicesSection = () => {
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Header */}
-        <div className="text-center mb-6">
-          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight" style={{ fontSize: '30px' }}>
+        <div className="text-center mb-6 animate-fadeInDown">
+          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight animate-scaleIn animation-delay-200" style={{ fontSize: '30px' }}>
             Web Design Services
           </h2>
-          <p className="text-gray-700 max-w-5xl mx-auto leading-relaxed" style={{ fontSize: '14px' }}>
+          <p className="text-gray-700 max-w-5xl mx-auto leading-relaxed animate-fadeInUp animation-delay-300" style={{ fontSize: '14px' }}>
             Our team of professional web designers is the secret to our success. Each web designer in our team is an expert and fully capable of creating amazing custom web design and development solutions to help your brand grow exponentially. We are determined to get you the best custom Web design services for your business and we work hard to maintain that.
           </p>
         </div>
@@ -82,14 +82,15 @@ const WebDesignServicesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-gray-100 hover:border-[#8a21f0] flex flex-col items-center text-center"
+              className="group bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-gray-100 hover:border-[#8a21f0] flex flex-col items-center text-center animate-fadeInUp hover-lift"
+              style={{ animationDelay: `${(index + 4) * 0.1}s` }}
             >
-              <div className="w-10 h-10 bg-[#35a5e8]/10 rounded-full flex items-center justify-center mb-2 group-hover:bg-[#35a5e8] transition-colors duration-300">
+              <div className="w-10 h-10 bg-[#35a5e8]/10 rounded-full flex items-center justify-center mb-2 group-hover:bg-[#35a5e8] transition-colors duration-300 animate-bounce">
                 <span className="text-xl group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </span>
               </div>
-              <h3 className="text-[#8a21f0] font-black text-[10px] leading-tight">
+              <h3 className="text-[#8a21f0] font-black text-[10px] leading-tight group-hover:text-[#35a5e8] transition-colors duration-300">
                 {feature.title}
               </h3>
             </div>
@@ -100,14 +101,14 @@ const WebDesignServicesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
 
           {/* Left Side - Logo/Brand Image */}
-          <div className="relative">
-            <div className="relative bg-[#8a21f0]/5 rounded-2xl p-6 flex items-center justify-center">
+          <div className="relative animate-fadeInLeft animation-delay-700">
+            <div className="relative bg-[#8a21f0]/5 rounded-2xl p-6 flex items-center justify-center hover-lift">
               <div className="text-center">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-[#8a21f0]/20 rounded-full blur-xl"></div>
-                  <div className="relative w-40 h-40 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-[#8a21f0]/30 transition-all duration-500">
+                  <div className="absolute inset-0 bg-[#8a21f0]/20 rounded-full blur-xl animate-pulse"></div>
+                  <div className="relative w-40 h-40 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-[#8a21f0]/30 transition-all duration-500 animate-float">
                     <div className="text-center">
-                      <div className="text-3xl mb-2">{testimonials[activeTestimonial].logo}</div>
+                      <div className="text-3xl mb-2 animate-bounce">{testimonials[activeTestimonial].logo}</div>
                       <h3 className="text-sm font-black text-[#8a21f0]">{testimonials[activeTestimonial].companyName}</h3>
                       <p className="text-[10px] font-bold text-gray-600">{testimonials[activeTestimonial].companySubtitle}</p>
                       <p className="text-[8px] text-gray-500 mt-1">{testimonials[activeTestimonial].companyDescription}</p>
@@ -124,16 +125,16 @@ const WebDesignServicesSection = () => {
           </div>
 
           {/* Right Side - Testimonial (No Box) */}
-          <div className="space-y-3">
+          <div className="space-y-3 animate-fadeInRight animation-delay-800">
             {/* Quote Bar */}
             <div className="flex gap-1">
-              <div className="w-1 h-6 bg-[#8a21f0] rounded-full"></div>
-              <div className="w-1 h-6 bg-[#8a21f0] rounded-full"></div>
-              <div className="w-1 h-6 bg-[#8a21f0] rounded-full"></div>
+              <div className="w-1 h-6 bg-[#8a21f0] rounded-full animate-slideInFromBottom"></div>
+              <div className="w-1 h-6 bg-[#8a21f0] rounded-full animate-slideInFromBottom animation-delay-100"></div>
+              <div className="w-1 h-6 bg-[#8a21f0] rounded-full animate-slideInFromBottom animation-delay-200"></div>
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-black text-[#8a21f0] mb-2 leading-tight transition-all duration-500">
+              <h3 className="text-xl md:text-2xl font-black text-[#8a21f0] mb-2 leading-tight transition-all duration-500 animate-fadeInUp animation-delay-900">
                 {testimonials[activeTestimonial].quote}
               </h3>
               <p className="text-gray-700 text-[10px] leading-relaxed mb-3 transition-all duration-500">
@@ -146,7 +147,7 @@ const WebDesignServicesSection = () => {
               {/* Star Rating */}
               <div className="flex items-center gap-0.5 mb-3">
                 {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-sm">★</span>
+                  <span key={i} className="text-yellow-500 text-sm animate-bounce" style={{ animationDelay: `${i * 0.1}s` }}>★</span>
                 ))}
                 {[...Array(6 - testimonials[activeTestimonial].rating)].map((_, i) => (
                   <span key={`empty-${i}`} className="text-gray-300 text-sm">★</span>
@@ -159,9 +160,9 @@ const WebDesignServicesSection = () => {
                   <button
                     key={index}
                     onClick={() => setActiveTestimonial(index)}
-                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                    className={`w-2 h-2 rounded-full transition-all duration-300 hover-scale ${
                       activeTestimonial === index
-                        ? 'bg-[#35a5e8]'
+                        ? 'bg-[#35a5e8] animate-pulse'
                         : 'bg-gray-300 hover:bg-[#8a21f0]'
                     }`}
                   />
