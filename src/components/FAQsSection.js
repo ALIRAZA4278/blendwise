@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
+import QuoteModal from './QuoteModal';
 
 const FAQsSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const faqs = [
     {
@@ -48,13 +50,13 @@ const FAQsSection = () => {
       <div className="max-w-4xl mx-auto px-4">
 
         {/* Header */}
-        <div className="text-center mb-6">
-          <div className="inline-block mb-2">
+        <div className="text-center mb-6 animate-fadeInDown">
+          <div className="inline-block mb-2 animate-scaleIn animation-delay-100">
             <span className="bg-[#35a5e8] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
               FAQs
             </span>
           </div>
-          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight" style={{ fontSize: '30px' }}>
+          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight animate-fadeInUp animation-delay-200" style={{ fontSize: '30px' }}>
             Frequently Asked Questions
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed" style={{ fontSize: '14px' }}>
@@ -67,7 +69,8 @@ const FAQsSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="group bg-gray-50 rounded-xl border-2 border-gray-100 overflow-hidden hover:border-[#8a21f0] transition-all duration-300"
+              className="group bg-gray-50 rounded-xl border-2 border-gray-100 overflow-hidden hover:border-[#8a21f0] transition-all duration-300 animate-fadeInUp hover-lift"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -113,24 +116,27 @@ const FAQsSection = () => {
         </div>
 
         {/* Contact CTA */}
-        <div className="text-center mt-6">
+        <div className="text-center mt-6 animate-fadeInUp animation-delay-500">
           <p className="text-gray-700 text-[10px] mb-3">
             Still have questions? We're here to help!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
             <a
               href="tel:6469939010"
-              className="group flex items-center gap-1.5 bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="group flex items-center gap-1.5 bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover-scale animate-bounce"
             >
               <span className="text-sm">📞</span>
               <span className="text-[10px]">(646) 993-9010</span>
             </a>
-            <button className="bg-[#35a5e8] hover:bg-[#2590d8] text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-[10px] uppercase">
+            <button onClick={() => setIsModalOpen(true)} className="bg-[#35a5e8] hover:bg-[#2590d8] text-white font-bold px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-[10px] uppercase hover-scale">
               Contact Us
             </button>
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

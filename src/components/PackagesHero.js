@@ -206,8 +206,8 @@ const PackagesHero = () => {
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
               {/* Left Side - Content */}
-              <div className="space-y-6 max-w-xl">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg">
+              <div className="space-y-6 max-w-xl animate-fadeInLeft">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg animate-fadeInUp animation-delay-200">
                   Our Affordable
                   <br />
                   <span className="text-[#35a5e8]">Packages</span>
@@ -227,8 +227,8 @@ const PackagesHero = () => {
               </div>
 
               {/* Right Side - Image */}
-              <div className="relative flex items-center justify-end">
-                <div className="relative w-full max-w-[700px] h-[400px] md:h-[500px] lg:h-[600px]">
+              <div className="relative flex items-center justify-end animate-fadeInRight animation-delay-400">
+                <div className="relative w-full max-w-[700px] h-[400px] md:h-[500px] lg:h-[600px] animate-float">
                   <Image
                     src="/packages-main.png"
                     alt="Digital Experiences"
@@ -326,10 +326,10 @@ const PackagesHero = () => {
 
           {/* Packages Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg) => (
+            {packages.map((pkg, index) => (
               <div
                 key={pkg.id}
-                className="relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-200 overflow-hidden flex flex-col h-full"
+                className={`relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-200 overflow-hidden flex flex-col h-full animate-fadeInUp hover-lift animation-delay-${(index % 3 + 1) * 100}`}
               >
                 {/* Badge */}
                 {pkg.badge && (

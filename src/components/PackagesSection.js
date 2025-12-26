@@ -1,7 +1,9 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import QuoteModal from './QuoteModal';
 
 const PackagesSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const packages = [
     {
       id: 1,
@@ -167,8 +169,8 @@ const PackagesSection = () => {
       <div className="relative z-10 max-w-5xl mx-auto px-4">
 
         {/* Section Header */}
-        <div className="text-center mb-6">
-          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight" style={{ fontSize: '30px' }}>
+        <div className="text-center mb-6 animate-fadeInDown">
+          <h2 className="font-black text-[#8a21f0] mb-2 leading-tight animate-fadeInUp animation-delay-200" style={{ fontSize: '30px' }}>
             Optimize your business with our
             <br />
             tailored packages
@@ -184,7 +186,7 @@ const PackagesSection = () => {
           {packages.map((pkg, index) => (
             <div
               key={pkg.id}
-              className="group relative bg-white rounded-xl shadow-xl border-2 border-gray-100 overflow-visible flex flex-col h-full"
+              className="group relative bg-white rounded-xl shadow-xl border-2 border-gray-100 overflow-visible flex flex-col h-full hover-lift animate-scaleIn"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
               }}
@@ -233,14 +235,14 @@ const PackagesSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="group/btn relative w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] overflow-hidden mb-1.5">
+                <button onClick={() => setIsModalOpen(true)} className="group/btn relative w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] overflow-hidden mb-1.5 animate-pulse">
                   <span className="relative z-10">ORDER NOW</span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
                 </button>
 
                 {/* View Details Link */}
                 <div className="text-center mb-2">
-                  <button className="text-[#35a5e8] font-bold hover:underline text-[10px] uppercase">
+                  <button onClick={() => setIsModalOpen(true)} className="text-[#35a5e8] font-bold hover:underline text-[10px] uppercase">
                     VIEW DETAILS
                   </button>
                 </div>
@@ -249,11 +251,11 @@ const PackagesSection = () => {
                 <div className="flex justify-between items-center text-[8px] border-t pt-2">
                   <div>
                     <p className="text-[#8a21f0] font-semibold">Share your idea?</p>
-                    <p className="text-[#35a5e8] font-bold">+(844) 415-6378</p>
+                    <a href="tel:8444156378" className="text-[#35a5e8] font-bold hover:text-[#8a21f0] transition-colors">+(844) 415-6378</a>
                   </div>
                   <div className="text-right">
                     <p className="text-[#8a21f0] font-semibold">Want to discuss?</p>
-                    <button className="text-[#35a5e8] font-bold hover:underline">
+                    <button onClick={() => setIsModalOpen(true)} className="text-[#35a5e8] font-bold hover:underline">
                       Live Chat Now
                     </button>
                   </div>
@@ -300,6 +302,9 @@ const PackagesSection = () => {
           background: #7a1dd8;
         }
       `}</style>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

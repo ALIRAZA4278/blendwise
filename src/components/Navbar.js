@@ -19,14 +19,14 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-[9999] w-full">
+    <nav className="absolute top-0 left-0 right-0 z-[9999] w-full animate-fadeInDown">
       <div className="w-full bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
 
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center">
+            <div className="flex-shrink-0 animate-scaleIn animation-delay-200">
+              <Link href="/" className="flex items-center hover-scale">
                 <Image
                   src="/logo/blend wise.png"
                   alt="Blendwise Logo"
@@ -85,10 +85,10 @@ const Navbar = () => {
             </div>
 
             {/* CTA Button - Desktop */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden lg:flex items-center animate-fadeInRight animation-delay-400">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#8a21f0] text-white font-bold text-sm px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-[#7a1dd8]"
+                className="bg-[#8a21f0] text-white font-bold text-sm px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-[#7a1dd8] animate-pulse hover-scale"
               >
                 Get a Free Quote
               </button>

@@ -168,8 +168,8 @@ const ServicesHero = () => {
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
               {/* Left Side - Content */}
-              <div className="space-y-6 max-w-xl">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg">
+              <div className="space-y-6 max-w-xl animate-fadeInLeft">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg animate-fadeInUp animation-delay-200">
                   Our Creative
                   <br />
                   <span className="text-[#35a5e8]">
@@ -235,7 +235,7 @@ const ServicesHero = () => {
                   selectedCard === service.id
                     ? 'bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] text-white'
                     : 'bg-white text-gray-900 border border-gray-100'
-                } rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden cursor-pointer`}
+                } rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden cursor-pointer animate-scaleIn hover-lift animation-delay-${service.id * 100}`}
               >
                 {selectedCard === service.id && (
                   <div className="absolute top-4 right-4 text-7xl opacity-10">{service.icon}</div>

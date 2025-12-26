@@ -57,8 +57,8 @@ const ContactHero = () => {
         {/* Content */}
         <div className="relative z-10 w-full h-full">
           <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-center text-center" style={{ minHeight: '60vh', paddingTop: '100px' }}>
-            <div className="space-y-6">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg">
+            <div className="space-y-6 animate-fadeInUp">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-lg animate-fadeInUp animation-delay-200">
                 We Love To Hear
                 <br />
                 <span className="text-[#35a5e8]">From You</span>
@@ -154,8 +154,8 @@ const ContactHero = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             {/* Left - Call Toll Free */}
-            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInLeft hover-lift">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
                 <span className="text-3xl text-white">🎧</span>
               </div>
               <h3 className="text-xl font-black text-gray-900 mb-3">Call Toll Free</h3>
@@ -166,8 +166,8 @@ const ContactHero = () => {
             </div>
 
             {/* Right - Start Live Chat */}
-            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInRight animation-delay-200 hover-lift">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4 animate-float">
                 <span className="text-3xl text-white">💬</span>
               </div>
               <h3 className="text-xl font-black text-gray-900 mb-3">Start Live Chat</h3>

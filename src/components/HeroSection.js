@@ -61,14 +61,14 @@ const HeroSection = () => {
         <div className="relative z-10 flex-1 w-full max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" style={{ paddingTop: '90px', paddingBottom: '40px' }}>
 
           {/* Left Content */}
-          <div className="text-white space-y-4 animate-fade-in-up">
+          <div className="text-white space-y-4 animate-fadeInLeft">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 animate-scaleIn animation-delay-200">
               <span className="text-[#35a5e8] text-base">⭐</span>
               <span className="text-xs font-bold">Award Winning Design Agency</span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight drop-shadow-2xl">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight drop-shadow-2xl animate-fadeInUp animation-delay-300">
               <span className="text-white">
                 Custom Web Design
               </span>
@@ -83,20 +83,20 @@ const HeroSection = () => {
             </h1>
 
             {/* Price Tag */}
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-baseline gap-2 animate-fadeInLeft animation-delay-400">
               <p className="text-white text-sm font-semibold">Starting From</p>
-              <p className="text-3xl font-black text-[#35a5e8]">$99</p>
+              <p className="text-3xl font-black text-[#35a5e8] animate-pulse">$99</p>
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 animate-fadeInUp animation-delay-500">
               {[
                 '3 Custom Logos & 3 Revisions',
                 '100% Ownership Rights',
                 '100% Money Back Guarantee',
                 'Dedicated Designer'
               ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 hover:bg-white/20 transition-all duration-300">
+                <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 hover:bg-white/20 transition-all duration-300 hover-lift">
                   <div className="shrink-0 w-4 h-4 rounded-full bg-[#8a21f0] flex items-center justify-center">
                     <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -108,8 +108,8 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-3">
-              <button onClick={() => setIsModalOpen(true)} className="group relative bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg text-xs uppercase">
+            <div className="flex flex-col sm:flex-row items-start gap-3 animate-fadeInUp animation-delay-600">
+              <button onClick={() => setIsModalOpen(true)} className="group relative bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg text-xs uppercase hover-scale animate-bounce">
                 <span className="relative z-10">Chat Now to Avail Discounts</span>
               </button>
               <a href="tel:6469939010" className="flex items-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-full px-3 py-1.5 hover:bg-white/20 transition-all duration-300">
@@ -135,7 +135,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Form */}
-          <div className="flex justify-center lg:justify-end animate-fade-in-up-delayed">
+          <div className="flex justify-center lg:justify-end animate-fadeInRight animation-delay-400">
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute -inset-1 bg-[#8a21f0]/50 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
@@ -228,7 +228,7 @@ const HeroSection = () => {
         </div>
 
         {/* Client Logos Section */}
-        <div className="relative z-20 w-full py-4 bg-white/10 backdrop-blur-md">
+        <div className="relative z-20 w-full py-4 bg-white/10 backdrop-blur-md animate-fadeInUp animation-delay-700">
           <div className="max-w-6xl mx-auto px-4">
             <Image
               src="/main/logos.png"
@@ -236,7 +236,7 @@ const HeroSection = () => {
               width={1000}
               height={50}
               style={{ objectFit: 'contain', width: '100%', height: 'auto', display: 'block' }}
-              className="opacity-80 hover:opacity-100 transition-opacity duration-300"
+              className="opacity-80 hover:opacity-100 transition-opacity duration-300 hover-scale"
             />
           </div>
         </div>
@@ -246,9 +246,9 @@ const HeroSection = () => {
       <div className="relative z-20 w-full shadow-xl">
         <div className="relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {/* Feature 1 */}
-          <div className="group relative bg-[#8a21f0] px-4 py-5 flex items-center gap-3 hover:bg-[#7a1dd8] transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#8a21f0] px-4 py-5 flex items-center gap-3 hover:bg-[#7a1dd8] transition-all duration-300 overflow-hidden animate-slideInFromBottom animation-delay-100">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">🏆</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300 animate-wiggle">🏆</div>
             <div className="relative z-10">
               <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 Award Winning Designers Ensuring 100% Satisfaction
@@ -257,9 +257,9 @@ const HeroSection = () => {
           </div>
 
           {/* Feature 2 */}
-          <div className="group relative bg-[#6a1ac8] px-4 py-5 flex items-center gap-3 hover:bg-[#5a15a8] transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#6a1ac8] px-4 py-5 flex items-center gap-3 hover:bg-[#5a15a8] transition-all duration-300 overflow-hidden animate-slideInFromBottom animation-delay-200">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">🌍</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300 animate-float">🌍</div>
             <div className="relative z-10">
               <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 10+ Years Experience Serving Clients Worldwide
@@ -268,9 +268,9 @@ const HeroSection = () => {
           </div>
 
           {/* Feature 3 */}
-          <div className="group relative bg-[#35a5e8] px-4 py-5 flex items-center gap-3 hover:bg-[#2590d8] transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#35a5e8] px-4 py-5 flex items-center gap-3 hover:bg-[#2590d8] transition-all duration-300 overflow-hidden animate-slideInFromBottom animation-delay-300">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">👨‍💼</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300 animate-bounce">👨‍💼</div>
             <div className="relative z-10">
               <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 24/7 Live Customer Support Always Available
@@ -279,9 +279,9 @@ const HeroSection = () => {
           </div>
 
           {/* Feature 4 */}
-          <div className="group relative bg-[#1585c8] px-4 py-5 flex items-center gap-3 hover:bg-[#1070b0] transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-[#1585c8] px-4 py-5 flex items-center gap-3 hover:bg-[#1070b0] transition-all duration-300 overflow-hidden animate-slideInFromBottom animation-delay-400">
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300">💰</div>
+            <div className="text-3xl transform group-hover:scale-110 transition-all duration-300 animate-pulse">💰</div>
             <div className="relative z-10">
               <h3 className="text-white font-black text-[10px] uppercase leading-relaxed">
                 100% Money Back Guarantee on All Services
