@@ -355,6 +355,19 @@ const ServicesHero = () => {
                 Video Animation
               </h3>
             </div>
+
+            {/* Customized Web Portal */}
+            <div
+              onClick={() => setIsModalOpen(true)}
+              className="group flex flex-col items-center p-6 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-2xl shadow-lg border-2 border-[#35a5e8] cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+            >
+              <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                <span className="text-3xl">🌐</span>
+              </div>
+              <h3 className="text-xs font-bold text-white text-center">
+                Customized Web Portal
+              </h3>
+            </div>
           </div>
         </div>
       </section>

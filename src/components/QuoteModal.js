@@ -1,12 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 
-const QuoteModal = ({ isOpen, onClose }) => {
+const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    message: '',
+    message: packageInfo ? `I'm interested in ${packageInfo.name} - $${packageInfo.price}` : '',
     agreed: false
   });
 
@@ -20,8 +20,16 @@ const QuoteModal = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Quote form submitted:', formData);
-    // Add your form submission logic here
+    const submissionData = {
+      ...formData,
+      packageDetails: packageInfo ? {
+        name: packageInfo.name,
+        price: packageInfo.price,
+        subtitle: packageInfo.subtitle
+      } : null
+    };
+    console.log('Quote form submitted:', submissionData);
+    // Add your form submission logic here (email will include package details)
     onClose();
   };
 
@@ -51,10 +59,16 @@ const QuoteModal = ({ isOpen, onClose }) => {
           <div className="mb-6">
             <div className="w-1 h-12 bg-[#8a21f0] mb-4"></div>
             <h2 className="text-2xl font-extrabold text-gray-900 mb-3">
-              Let's get started
+              {packageInfo ? `Get ${packageInfo.name}` : "Let's get started"}
             </h2>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Providing you the perfect solution for your business needs. Let's work together and unlock doors to success.
+              {packageInfo ? (
+                <>
+                  <span className="font-bold text-[#8a21f0]">${packageInfo.price}</span> - {packageInfo.subtitle}
+                </>
+              ) : (
+                "Providing you the perfect solution for your business needs. Let's work together and unlock doors to success."
+              )}
             </p>
           </div>
 

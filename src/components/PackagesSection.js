@@ -4,6 +4,13 @@ import QuoteModal from './QuoteModal';
 
 const PackagesSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+
+  const handlePackageSelect = (pkg) => {
+    setSelectedPackage(pkg);
+    setIsModalOpen(true);
+  };
+
   const packages = [
     {
       id: 1,
@@ -235,14 +242,14 @@ const PackagesSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button onClick={() => setIsModalOpen(true)} className="group/btn relative w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] overflow-hidden mb-1.5 animate-pulse">
+                <button onClick={() => handlePackageSelect(pkg)} className="group/btn relative w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] overflow-hidden mb-1.5 animate-pulse">
                   <span className="relative z-10">ORDER NOW</span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300"></div>
                 </button>
 
                 {/* View Details Link */}
                 <div className="text-center mb-2">
-                  <button onClick={() => setIsModalOpen(true)} className="text-[#35a5e8] font-bold hover:underline text-[10px] uppercase">
+                  <button onClick={() => handlePackageSelect(pkg)} className="text-[#35a5e8] font-bold hover:underline text-[10px] uppercase">
                     VIEW DETAILS
                   </button>
                 </div>
@@ -255,7 +262,7 @@ const PackagesSection = () => {
                   </div>
                   <div className="text-right">
                     <p className="text-[#8a21f0] font-semibold">Want to discuss?</p>
-                    <button onClick={() => setIsModalOpen(true)} className="text-[#35a5e8] font-bold hover:underline">
+                    <button onClick={() => handlePackageSelect(pkg)} className="text-[#35a5e8] font-bold hover:underline">
                       Live Chat Now
                     </button>
                   </div>
@@ -304,7 +311,7 @@ const PackagesSection = () => {
       `}</style>
 
       {/* Quote Modal */}
-      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} packageInfo={selectedPackage} />
     </section>
   );
 };

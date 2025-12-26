@@ -6,6 +6,12 @@ import QuoteModal from './QuoteModal';
 const PackagesHero = () => {
   const [selectedCategory, setSelectedCategory] = useState('LOGO');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+
+  const handlePackageSelect = (pkg) => {
+    setSelectedPackage(pkg);
+    setIsModalOpen(true);
+  };
 
   const packages = [
     {
@@ -380,14 +386,14 @@ const PackagesHero = () => {
                     </div>
                     <div>
                       <p className="text-gray-600 font-semibold">Want to discuss?</p>
-                      <button onClick={() => setIsModalOpen(true)} className="text-[#8a21f0] font-bold hover:underline">
+                      <button onClick={() => handlePackageSelect(pkg)} className="text-[#8a21f0] font-bold hover:underline">
                         Live Chat Now
                       </button>
                     </div>
                   </div>
 
                   {/* CTA Button */}
-                  <button onClick={() => setIsModalOpen(true)} className="w-full bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs">
+                  <button onClick={() => handlePackageSelect(pkg)} className="w-full bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs">
                     START PROJECT
                   </button>
                 </div>
@@ -424,7 +430,7 @@ const PackagesHero = () => {
     `}</style>
 
     {/* Quote Modal */}
-    <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} packageInfo={selectedPackage} />
     </>
   );
 };
