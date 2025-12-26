@@ -6,17 +6,17 @@ const UniqueWebsiteSection = () => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Top Banner - Purple Background */}
-      <div className="relative bg-[#8a21f0] py-6">
+      <div className="relative bg-[#8a21f0] py-6 animate-fadeInDown">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="font-black text-white mb-2" style={{ fontSize: '30px' }}>
+          <h2 className="font-black text-white mb-2 animate-scaleIn animation-delay-200" style={{ fontSize: '30px' }}>
             All you need to create a website.
           </h2>
-          <p className="text-white/90 mb-3" style={{ fontSize: '14px' }}>
+          <p className="text-white/90 mb-3 animate-fadeInUp animation-delay-300" style={{ fontSize: '14px' }}>
             Creating a website should be easy and fun — this is our philosophy here at Custom Web Guru.
           </p>
           <a
             href="#"
-            className="inline-block text-[#35a5e8] hover:text-[#2590d8] font-bold text-[10px] underline transition-colors duration-300"
+            className="inline-block text-[#35a5e8] hover:text-[#2590d8] font-bold text-[10px] underline transition-colors duration-300 animate-bounce animation-delay-400 hover-scale"
           >
             Build A Professional Website
           </a>
@@ -29,18 +29,18 @@ const UniqueWebsiteSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
             {/* Left Side - Device Mockups */}
-            <div className="relative">
+            <div className="relative animate-fadeInLeft animation-delay-400">
               <div className="relative flex items-center justify-center">
                 {/* Desktop Device */}
-                <div className="relative z-10 w-full max-w-md">
-                  <div className="relative bg-gray-200 rounded-lg shadow-lg overflow-hidden p-2">
+                <div className="relative z-10 w-full max-w-md animate-float">
+                  <div className="relative bg-gray-200 rounded-lg shadow-lg overflow-hidden p-2 hover-lift">
                     <div className="bg-white rounded-md overflow-hidden">
                       {/* Mockup Header */}
                       <div className="bg-gray-100 p-1 flex items-center gap-1">
                         <div className="flex gap-0.5">
-                          <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-red-400 rounded-full animate-pulse"></div>
+                          <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse animation-delay-100"></div>
+                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse animation-delay-200"></div>
                         </div>
                       </div>
                       {/* Mockup Content */}
@@ -71,8 +71,8 @@ const UniqueWebsiteSection = () => {
                 </div>
 
                 {/* Mobile Device - Overlapping */}
-                <div className="absolute -bottom-6 -right-4 z-20 w-32">
-                  <div className="relative bg-gray-800 rounded-xl shadow-lg overflow-hidden p-1">
+                <div className="absolute -bottom-6 -right-4 z-20 w-32 animate-fadeInRight animation-delay-600">
+                  <div className="relative bg-gray-800 rounded-xl shadow-lg overflow-hidden p-1 hover-scale">
                     <div className="bg-white rounded-lg overflow-hidden">
                       <div className="bg-[#d4a89e] p-2">
                         <div className="bg-white rounded-md p-2 space-y-1">
