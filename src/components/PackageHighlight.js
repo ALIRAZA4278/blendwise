@@ -1,8 +1,18 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import QuoteModal from './QuoteModal';
 
 const PackageHighlight = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const packageInfo = {
+    name: 'Customized Web Portal',
+    price: 4999.99,
+    subtitle: 'Complete web solution tailored for your business success'
+  };
+
   return (
+    <>
     <section className="relative w-full py-8 bg-gray-50 overflow-hidden">
       <div className="relative z-10 max-w-5xl mx-auto px-4">
 
@@ -15,7 +25,7 @@ const PackageHighlight = () => {
 
             {/* Header */}
             <div className="text-center mb-4 animate-fadeInDown">
-              <div className="inline-block mb-1 animate-bounce">
+              <div className="inline-block mb-1">
                 <span className="text-[#35a5e8] font-black text-xs tracking-wider uppercase">
                   🚀 WEB PACKAGE
                 </span>
@@ -72,7 +82,7 @@ const PackageHighlight = () => {
 
                 {/* Value Added Services */}
                 <div className="mt-2 bg-gray-50 p-2 rounded-lg border border-gray-200 hover-lift">
-                  <h3 className="text-[#35a5e8] font-black text-[10px] mb-1.5 flex items-center gap-1 uppercase animate-pulse">
+                  <h3 className="text-[#35a5e8] font-black text-[10px] mb-1.5 flex items-center gap-1 uppercase">
                     <span>✨</span> Value Added Services
                   </h3>
                   <div className="space-y-1.5">
@@ -93,7 +103,7 @@ const PackageHighlight = () => {
                 {/* Left - Contact Info */}
                 <div className="text-center lg:text-left animate-fadeInLeft animation-delay-800">
                   <div className="flex flex-col sm:flex-row items-center gap-2 mb-2">
-                    <a href="tel:6469939010" className="group flex items-center gap-1.5 bg-white border border-[#35a5e8] hover:border-[#2590d8] rounded-full px-3 py-1.5 transition-all duration-300 shadow-sm hover:shadow-md hover-scale animate-bounce" style={{ textDecoration: 'none' }}>
+                    <a href="tel:6469939010" className="group flex items-center gap-1.5 bg-white border border-[#35a5e8] hover:border-[#2590d8] rounded-full px-3 py-1.5 transition-all duration-300 shadow-sm hover:shadow-md hover-scale" style={{ textDecoration: 'none' }}>
                       <div className="w-5 h-5 bg-[#35a5e8] rounded-full flex items-center justify-center">
                         <span className="text-xs">📞</span>
                       </div>
@@ -101,7 +111,7 @@ const PackageHighlight = () => {
                         (646) 993-9010
                       </span>
                     </a>
-                    <button className="flex items-center gap-1.5 bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-3 py-1.5 rounded-full transition-all duration-300 shadow-md text-xs hover-scale animate-pulse">
+                    <button onClick={() => setIsModalOpen(true)} className="flex items-center gap-1.5 bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold px-3 py-1.5 rounded-full transition-all duration-300 shadow-md text-xs hover-scale">
                       <span className="text-xs">💬</span>
                       <span>LIVE CHAT</span>
                     </button>
@@ -115,18 +125,18 @@ const PackageHighlight = () => {
                 <div className="text-center animate-fadeInRight animation-delay-800">
                   <div className="mb-2 bg-gray-50 p-2 rounded-lg border border-gray-200 hover-lift">
                     <p className="text-gray-400 line-through text-xs mb-0.5">$9,999.88</p>
-                    <p className="font-black text-2xl text-[#8a21f0] animate-pulse">
+                    <p className="font-black text-2xl text-[#8a21f0]">
                       $4,999<span className="text-base">.99</span>
                     </p>
                     <p className="text-gray-600 text-[10px] mt-0.5">One-time payment</p>
                   </div>
-                  <button className="group relative bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-black px-6 py-2 rounded-full transition-all duration-300 shadow-lg mb-1.5 w-full text-xs hover-scale animate-bounce">
+                  <button onClick={() => setIsModalOpen(true)} className="group relative bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-black px-6 py-2 rounded-full transition-all duration-300 shadow-lg mb-1.5 w-full text-xs hover-scale">
                     🎉 ORDER NOW
                   </button>
-                  <p className="text-[10px] font-bold text-gray-700 mb-1 animate-wiggle">
+                  <p className="text-[10px] font-bold text-gray-700 mb-1">
                     20% more OFF on Next Order 🎁
                   </p>
-                  <button className="text-[#35a5e8] font-bold text-[10px] hover:opacity-80 transition-opacity underline uppercase hover-scale">
+                  <button onClick={() => setIsModalOpen(true)} className="text-[#35a5e8] font-bold text-[10px] hover:opacity-80 transition-opacity underline uppercase hover-scale">
                     VIEW DETAILS →
                   </button>
                 </div>
@@ -137,6 +147,10 @@ const PackageHighlight = () => {
         </div>
       </div>
     </section>
+
+    {/* Quote Modal */}
+    <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} packageInfo={packageInfo} />
+    </>
   );
 };
 

@@ -1,10 +1,13 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import QuoteModal from '@/components/QuoteModal';
 import Image from 'next/image';
 
 const TermsConditionsPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
     <div>
@@ -25,9 +28,9 @@ const TermsConditionsPage = () => {
           }}></div>
 
           {/* Floating Orbs */}
-          <div className="absolute top-10 left-5 w-48 h-48 bg-[#35a5e8]/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-10 right-5 w-64 h-64 bg-[#8a21f0]/10 rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-[#35a5e8]/5 rounded-full blur-2xl animate-float"></div>
+          <div className="absolute top-10 left-5 w-48 h-48 bg-[#35a5e8]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-5 w-64 h-64 bg-[#8a21f0]/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-[#35a5e8]/5 rounded-full blur-2xl"></div>
 
           {/* Diagonal Lines */}
           <div className="absolute top-0 left-0 w-full h-full opacity-5">
@@ -47,10 +50,10 @@ const TermsConditionsPage = () => {
                 Our Terms and Conditions outline the rules, rights, and responsibilities for using our services, ensuring a fair and transparent experience for all users.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-                <button className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
+                <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                   Get Started
                 </button>
-                <button className="bg-white hover:bg-gray-100 text-[#8a21f0] font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
+                <button onClick={() => setIsModalOpen(true)} className="bg-white hover:bg-gray-100 text-[#8a21f0] font-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
                   Live Chat
                 </button>
               </div>
@@ -304,7 +307,7 @@ const TermsConditionsPage = () => {
           <p className="text-white text-sm mb-8 max-w-2xl mx-auto">
             Our team is here to help clarify any questions you may have about our policies and services
           </p>
-          <button className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
+          <button onClick={() => setIsModalOpen(true)} className="bg-white text-[#8a21f0] hover:bg-gray-100 font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-xs">
             Contact Us Today
           </button>
         </div>
@@ -312,6 +315,9 @@ const TermsConditionsPage = () => {
 
       <Footer />
     </div>
+
+    {/* Quote Modal */}
+    <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     <style jsx>{`
       @keyframes grid-move {

@@ -9,6 +9,9 @@ const ServicesHero = () => {
   const [seoContent, setSeoContent] = useState('ON-PAGE SEO');
   const [wordpressContent, setWordpressContent] = useState('CUSTOM THEMES');
   const [socialContent, setSocialContent] = useState('FACEBOOK');
+  const [selectedPackage, setSelectedPackage] = useState(null);
+  const [shopifyContent, setShopifyContent] = useState('SHOPIFY STORE');
+  const [printContent, setPrintContent] = useState('WORDPRESS');
 
   const customizedServices = [
     { id: 1, icon: '📦', title: 'Custom Package', description: 'It is a long established fact that a reader will', action: 'modal' },
@@ -92,6 +95,50 @@ const ServicesHero = () => {
         title: 'YouTube Marketing',
         description: 'Grow your video presence with YouTube marketing including channel optimization, video SEO, thumbnail design, and advertising campaigns. Create compelling video content that educates, entertains, and converts viewers into customers.'
       }
+    },
+    shopify: {
+      'SHOPIFY STORE': {
+        title: 'Shopify Store Development',
+        description: 'Professional Shopify store setup and customization including theme design, app integration, payment gateway setup, and inventory management. Create a powerful online store that converts visitors into customers and drives sales growth.'
+      },
+      'WOOCOMMERCE': {
+        title: 'WooCommerce Development',
+        description: 'Build feature-rich WooCommerce stores with custom functionality, payment gateway integration, shipping solutions, and product management. Transform your WordPress site into a high-performing e-commerce platform.'
+      },
+      'MAGENTO': {
+        title: 'Magento E-Commerce',
+        description: 'Enterprise-level Magento development for large-scale online stores with advanced features, multi-store management, complex product catalogs, and custom integrations. Scale your e-commerce business with robust solutions.'
+      },
+      'PAYMENT GATEWAY': {
+        title: 'Payment Gateway Integration',
+        description: 'Secure payment gateway setup and configuration including Stripe, PayPal, Square, and custom payment solutions. Provide customers with safe and convenient payment options to boost conversions.'
+      },
+      'INVENTORY': {
+        title: 'Inventory Management',
+        description: 'Complete inventory management system integration with real-time stock tracking, automated reordering, multi-location management, and reporting. Streamline your operations and prevent stockouts.'
+      }
+    },
+    print: {
+      'WORDPRESS': {
+        title: 'WordPress Website',
+        description: 'Custom WordPress website development with premium themes, plugins, and optimizations. Build a professional online presence that grows with your business and engages your audience effectively.'
+      },
+      'SHOPIFY': {
+        title: 'Shopify Website',
+        description: 'Professional Shopify store setup and customization with modern design, seamless checkout, and powerful e-commerce features. Launch your online store quickly and start selling today.'
+      },
+      'PRINT DESIGN': {
+        title: 'Print Design Services',
+        description: 'Professional print design solutions including business cards, brochures, flyers, banners, and marketing materials. We create visually stunning designs that effectively communicate your brand message and leave lasting impressions.'
+      },
+      'E-COMMERCE': {
+        title: 'E-Commerce Solutions',
+        description: 'Complete online store development with payment gateway integration, inventory management, and secure checkout. Build a scalable e-commerce platform that delivers exceptional shopping experiences.'
+      },
+      'STATIONARY': {
+        title: 'Stationary Design',
+        description: 'Professional business stationery design including business cards, letterheads, envelopes, and branded materials. Create a cohesive brand identity that makes a lasting impression on clients and partners.'
+      }
     }
   };
 
@@ -100,7 +147,7 @@ const ServicesHero = () => {
       id: 1,
       title: serviceContent.seo[seoContent].title,
       description: serviceContent.seo[seoContent].description,
-      image: '/services/seo.jpg',
+      image: '/services/services-4.png',
       buttons: ['ON-PAGE SEO →', 'OFF-PAGE SEO →', 'TECHNICAL SEO →', 'LOCAL SEO →', 'SEO ANALYTICS →'],
       imageLeft: true,
       contentType: 'seo'
@@ -109,7 +156,7 @@ const ServicesHero = () => {
       id: 2,
       title: serviceContent.wordpress[wordpressContent].title,
       description: serviceContent.wordpress[wordpressContent].description,
-      image: '/services/wordpress.jpg',
+      image: '/services/services-1.png',
       buttons: ['CUSTOM THEMES →', 'PLUGIN DEV →', 'WP E-COMMERCE →', 'MAINTENANCE →', 'OPTIMIZATION →'],
       imageLeft: false,
       contentType: 'wordpress'
@@ -118,7 +165,7 @@ const ServicesHero = () => {
       id: 3,
       title: serviceContent.social[socialContent].title,
       description: serviceContent.social[socialContent].description,
-      image: '/services/facebook.jpg',
+      image: '/services/services-2.png',
       buttons: ['FACEBOOK →', 'INSTAGRAM →', 'LINKEDIN →', 'TWITTER →', 'YOUTUBE →'],
       imageLeft: true,
       contentType: 'social'
@@ -262,10 +309,14 @@ const ServicesHero = () => {
       </section>
 
       {/* Main Services Grid Section */}
-      <section className="relative w-full py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative w-full py-20 bg-white overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-[#35a5e8]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 bg-[#8a21f0]/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fadeInUp">
             <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-4">
               Our Services
             </h2>
@@ -277,94 +328,129 @@ const ServicesHero = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {/* Graphic Design */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">🎨</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#8a21f0] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8a21f0]/5 to-[#35a5e8]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#6a19c0] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#8a21f0] transition-colors duration-300">
                 Graphic Design
               </h3>
             </div>
 
             {/* UI/UX Design */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">✨</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#35a5e8] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-200">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#35a5e8]/5 to-[#8a21f0]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#35a5e8] to-[#2a94d8] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#35a5e8] transition-colors duration-300">
                 UI/UX Design
               </h3>
             </div>
 
             {/* Website */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">💻</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#8a21f0] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8a21f0]/5 to-[#35a5e8]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#8a21f0] transition-colors duration-300">
                 Website
               </h3>
             </div>
 
             {/* SMM */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">📱</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#35a5e8] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-400">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#35a5e8]/5 to-[#8a21f0]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#35a5e8] to-[#8a21f0] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#35a5e8] transition-colors duration-300">
                 SMM
               </h3>
             </div>
 
             {/* SEO */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">🔍</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#8a21f0] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8a21f0]/5 to-[#35a5e8]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#6a19c0] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#8a21f0] transition-colors duration-300">
                 SEO
               </h3>
             </div>
 
             {/* SEM */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">📊</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#35a5e8] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-600">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#35a5e8]/5 to-[#8a21f0]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#35a5e8] to-[#2a94d8] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#35a5e8] transition-colors duration-300">
                 SEM
               </h3>
             </div>
 
             {/* Application Development */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">📲</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#8a21f0] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-700">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8a21f0]/5 to-[#35a5e8]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#8a21f0] transition-colors duration-300">
                 Application Development
               </h3>
             </div>
 
             {/* Video Animation */}
-            <div className="group flex flex-col items-center p-6 bg-gray-50 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">🎬</span>
+            <div className="group relative flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-[#35a5e8] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-800">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#35a5e8]/5 to-[#8a21f0]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative w-16 h-16 bg-gradient-to-br from-[#35a5e8] to-[#8a21f0] rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-gray-900 text-center">
+              <h3 className="relative text-xs font-black text-gray-900 text-center group-hover:text-[#35a5e8] transition-colors duration-300">
                 Video Animation
               </h3>
             </div>
 
             {/* Customized Web Portal */}
             <div
-              onClick={() => setIsModalOpen(true)}
-              className="group flex flex-col items-center p-6 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-2xl shadow-lg border-2 border-[#35a5e8] cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+              onClick={() => {
+                setSelectedPackage({
+                  name: 'Customized Web Portal',
+                  price: 4999.99,
+                  subtitle: 'Complete web solution tailored for your business success'
+                });
+                setIsModalOpen(true);
+              }}
+              className="group relative flex flex-col items-center p-6 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-2xl shadow-lg border-2 border-[#35a5e8] cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-2xl hover-lift animate-fadeInUp animation-delay-900 overflow-hidden"
             >
-              <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                <span className="text-3xl">🌐</span>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
               </div>
-              <h3 className="text-xs font-bold text-white text-center">
+              <h3 className="relative text-xs font-black text-white text-center group-hover:scale-105 transition-transform duration-300">
                 Customized Web Portal
               </h3>
             </div>
@@ -432,12 +518,12 @@ const ServicesHero = () => {
 
               {/* Image Side */}
               <div className={`${service.imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="relative w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative w-full h-[400px]">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain' }}
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
@@ -449,60 +535,7 @@ const ServicesHero = () => {
         </section>
       ))}
 
-      {/* Shopify Store Development Section */}
-      <section className="relative w-full py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-            {/* Left Side - Image */}
-            <div className="lg:order-1">
-              <div className="relative w-full h-[400px] md:h-[500px]">
-                <Image
-                  src="/services/shopify.png"
-                  alt="Shopify Store Development"
-                  fill
-                  style={{ objectFit: 'contain' }}
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Right Side - Content */}
-            <div className="lg:order-2">
-              <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-6">
-                Shopify Store Development
-              </h2>
-              <p className="text-gray-700 text-sm leading-relaxed mb-8">
-                Professional Shopify store setup and customization including theme design, app integration, payment gateway setup, and inventory management. Create a powerful online store that converts visitors into customers and drives sales growth.
-              </p>
-
-              {/* Buttons */}
-              <div className="flex flex-wrap gap-3">
-                <button className="bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  SHOPIFY STORE →
-                </button>
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  WOOCOMMERCE →
-                </button>
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  MAGENTO →
-                </button>
-              </div>
-              <div className="flex flex-wrap gap-3 mt-3">
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  PAYMENT GATEWAY →
-                </button>
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  INVENTORY →
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+     
 
       {/* Print Design Services Section */}
       <section className="relative w-full py-20 bg-gray-50">
@@ -512,31 +545,46 @@ const ServicesHero = () => {
             {/* Left Side - Content */}
             <div className="lg:order-1">
               <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-6">
-                Print Design Services
+                {serviceContent.print[printContent].title}
               </h2>
               <p className="text-gray-700 text-sm leading-relaxed mb-8">
-                Professional print design solutions including business cards, brochures, flyers, banners, and marketing materials. We create visually stunning designs that effectively communicate your brand message and leave lasting impressions on your audience.
+                {serviceContent.print[printContent].description}
               </p>
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-3">
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  WORDPRESS →
-                </button>
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  SHOPIFY →
-                </button>
-                <button className="bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  PRINT DESIGN →
-                </button>
+                {['WORDPRESS →', 'SHOPIFY →', 'PRINT DESIGN →'].map((button, idx) => {
+                  const cleanText = button.replace(' →', '');
+                  const isActive = printContent === cleanText;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setPrintContent(cleanText)}
+                      className={`${isActive
+                        ? 'bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white'
+                        : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'
+                      } hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm cursor-pointer`}>
+                      {button}
+                    </button>
+                  );
+                })}
               </div>
               <div className="flex flex-wrap gap-3 mt-3">
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  E-COMMERCE →
-                </button>
-                <button className="bg-white text-[#8a21f0] border-2 border-[#8a21f0] hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  STATIONARY →
-                </button>
+                {['E-COMMERCE →', 'STATIONARY →'].map((button, idx) => {
+                  const cleanText = button.replace(' →', '');
+                  const isActive = printContent === cleanText;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setPrintContent(cleanText)}
+                      className={`${isActive
+                        ? 'bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white'
+                        : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'
+                      } hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm cursor-pointer`}>
+                      {button}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -544,7 +592,7 @@ const ServicesHero = () => {
             <div className="lg:order-2">
               <div className="relative w-full h-[400px] md:h-[500px]">
                 <Image
-                  src="/services/print-design.png"
+                  src="/services/services-5.png"
                   alt="Print Design Services"
                   fill
                   style={{ objectFit: 'contain' }}
@@ -559,6 +607,75 @@ const ServicesHero = () => {
         </div>
       </section>
 
+ {/* Shopify Store Development Section */}
+      <section className="relative w-full py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left Side - Image */}
+            <div className="lg:order-1">
+              <div className="relative w-full h-[400px] md:h-[500px]">
+                <Image
+                  src="/services/services-3.png"
+                  alt="Shopify Store Development"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Right Side - Content */}
+            <div className="lg:order-2">
+              <h2 className="text-2xl md:text-3xl font-black text-[#8a21f0] mb-6">
+                {serviceContent.shopify[shopifyContent].title}
+              </h2>
+              <p className="text-gray-700 text-sm leading-relaxed mb-8">
+                {serviceContent.shopify[shopifyContent].description}
+              </p>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-3">
+                {['SHOPIFY STORE →', 'WOOCOMMERCE →', 'MAGENTO →'].map((button, idx) => {
+                  const cleanText = button.replace(' →', '');
+                  const isActive = shopifyContent === cleanText;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setShopifyContent(cleanText)}
+                      className={`${isActive
+                        ? 'bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white'
+                        : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'
+                      } hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm cursor-pointer`}>
+                      {button}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="flex flex-wrap gap-3 mt-3">
+                {['PAYMENT GATEWAY →', 'INVENTORY →'].map((button, idx) => {
+                  const cleanText = button.replace(' →', '');
+                  const isActive = shopifyContent === cleanText;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setShopifyContent(cleanText)}
+                      className={`${isActive
+                        ? 'bg-gradient-to-r from-[#8a21f0] to-[#7a1dd8] text-white'
+                        : 'bg-white text-[#8a21f0] border-2 border-[#8a21f0]'
+                      } hover:scale-105 font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg text-sm cursor-pointer`}>
+                      {button}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
       {/* Stats Section */}
       <section className="relative w-full py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -670,7 +787,7 @@ const ServicesHero = () => {
       `}</style>
 
       {/* Quote Modal */}
-      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} packageInfo={selectedPackage} />
     </div>
   );
 };
