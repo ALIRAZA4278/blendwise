@@ -16,17 +16,19 @@ const page = () => {
   return (
     <div>
       <Navbar />
-      <HeroSection />
-      {/* <PortfolioSection /> */}
-      <PackagesSection />
-      <PackageHighlight />
-      <WebsiteCreationSection />
-      <UniqueWebsiteSection />
-      <WebDesignServicesSection />
-      {/* <BrandExcellenceSection /> */}
-      {/* <TestimonialsSection /> */}
-      <FAQsSection />
-      <Footer />
+      <div id="main-content">
+        <HeroSection />
+        {/* <PortfolioSection /> */}
+        <PackagesSection />
+        <PackageHighlight />
+        <WebsiteCreationSection />
+        <UniqueWebsiteSection />
+        <WebDesignServicesSection />
+        {/* <BrandExcellenceSection /> */}
+        {/* <TestimonialsSection /> */}
+        <FAQsSection />
+        <Footer />
+      </div>
     </div>
   );
 };

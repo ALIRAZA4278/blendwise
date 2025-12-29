@@ -7,8 +7,10 @@ const PackagesPage = () => {
   return (
     <div>
       <Navbar />
-      <PackagesHero />
-      <Footer />
+      <div id="main-content">
+        <PackagesHero />
+        <Footer />
+      </div>
     </div>
   );
 };

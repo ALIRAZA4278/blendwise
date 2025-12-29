@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,28 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
     message: packageInfo ? `I'm interested in ${packageInfo.name} - $${packageInfo.price}` : '',
     agreed: false
   });
+
+  useEffect(() => {
+    const mainContent = document.getElementById('main-content');
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      if (mainContent) {
+        mainContent.style.filter = 'blur(8px)';
+        mainContent.style.transition = 'filter 0.3s ease';
+      }
+    } else {
+      document.body.style.overflow = 'unset';
+      if (mainContent) {
+        mainContent.style.filter = 'none';
+      }
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      if (mainContent) {
+        mainContent.style.filter = 'none';
+      }
+    };
+  }, [isOpen]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -36,15 +58,17 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <>
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000]"
         onClick={onClose}
       ></div>
 
-      {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto mx-auto">
+      {/* Modal Container */}
+      <div className="fixed top-0 left-0 right-0 bottom-0 z-[10001] flex items-center justify-center p-4 pointer-events-none min-h-screen">
+        {/* Modal */}
+        <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto pointer-events-auto m-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -161,7 +185,8 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
           </form>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -19,7 +20,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} antialiased`}
       >
-        {children}
+        <ScrollAnimationProvider>
+          {children}
+        </ScrollAnimationProvider>
       </body>
     </html>
   );

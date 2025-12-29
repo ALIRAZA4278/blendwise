@@ -7,8 +7,10 @@ const ServicesPage = () => {
   return (
     <div>
       <Navbar />
-      <ServicesHero />
-      <Footer />
+      <div id="main-content">
+        <ServicesHero />
+        <Footer />
+      </div>
     </div>
   );
 };

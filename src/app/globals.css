@@ -247,6 +247,48 @@ body {
   animation-delay: 0.8s;
 }
 
+/* Scroll Animation - Initial State */
+.scroll-fade-up,
+.scroll-fade-down,
+.scroll-fade-left,
+.scroll-fade-right,
+.scroll-scale,
+.scroll-fade {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-up {
+  transform: translateY(50px);
+}
+
+.scroll-fade-down {
+  transform: translateY(-50px);
+}
+
+.scroll-fade-left {
+  transform: translateX(-50px);
+}
+
+.scroll-fade-right {
+  transform: translateX(50px);
+}
+
+.scroll-scale {
+  transform: scale(0.9);
+}
+
+/* Scroll Animation - Active State */
+.scroll-fade-up.active,
+.scroll-fade-down.active,
+.scroll-fade-left.active,
+.scroll-fade-right.active,
+.scroll-scale.active,
+.scroll-fade.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
 /* Initial State for Animations */
 .animate-on-scroll {
   opacity: 0;
