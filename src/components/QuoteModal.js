@@ -11,24 +11,13 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
   });
 
   useEffect(() => {
-    const mainContent = document.getElementById('main-content');
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      if (mainContent) {
-        mainContent.style.filter = 'blur(8px)';
-        mainContent.style.transition = 'filter 0.3s ease';
-      }
     } else {
       document.body.style.overflow = 'unset';
-      if (mainContent) {
-        mainContent.style.filter = 'none';
-      }
     }
     return () => {
       document.body.style.overflow = 'unset';
-      if (mainContent) {
-        mainContent.style.filter = 'none';
-      }
     };
   }, [isOpen]);
 
@@ -61,7 +50,7 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000]"
+        className="fixed inset-0 bg-black/70 backdrop-blur-lg z-[10000]"
         onClick={onClose}
       ></div>
 
