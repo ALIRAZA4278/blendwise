@@ -9,10 +9,13 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
     message: packageInfo ? `I'm interested in ${packageInfo.name} - $${packageInfo.price}` : '',
     agreed: false
   });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setStatus(null);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -29,19 +32,37 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus(null);
     const submissionData = {
       ...formData,
+      formType: 'quote',
       packageDetails: packageInfo ? {
         name: packageInfo.name,
         price: packageInfo.price,
         subtitle: packageInfo.subtitle
       } : null
     };
-    console.log('Quote form submitted:', submissionData);
-    // Add your form submission logic here (email will include package details)
-    onClose();
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(submissionData),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '', agreed: false });
+        setTimeout(() => onClose(), 3000);
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -164,12 +185,30 @@ const QuoteModal = ({ isOpen, onClose, packageInfo = null }) => {
               </span>
             </label>
 
+            {/* Status Messages */}
+            {status === 'success' && (
+              <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm text-center font-semibold">
+                Request submitted successfully! Check your email for confirmation.
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm text-center font-semibold">
+                Something went wrong. Please try again.
+              </div>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs"
+              disabled={loading}
+              className="w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-xs disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              SUBMIT
+              {loading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                  Submitting...
+                </span>
+              ) : 'SUBMIT'}
             </button>
           </form>
         </div>

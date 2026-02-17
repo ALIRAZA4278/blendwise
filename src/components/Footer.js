@@ -11,6 +11,8 @@ const Footer = () => {
     description: '',
     agreed: false
   });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -20,9 +22,27 @@ const Footer = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Footer form submitted:', formData);
+    setLoading(true);
+    setStatus(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, formType: 'footer' }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', subject: '', description: '', agreed: false });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const pressLogos = [
@@ -150,11 +170,27 @@ const Footer = () => {
                 </span>
               </label>
 
+              {status === 'success' && (
+                <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-[10px] text-center font-semibold">
+                  Submitted successfully! Check your email for confirmation.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-[10px] text-center font-semibold">
+                  Something went wrong. Please try again.
+                </div>
+              )}
               <button
                 type="submit"
-                className="w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px]"
+                disabled={loading}
+                className="w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                ● Submit
+                {loading ? (
+                  <span className="flex items-center justify-center gap-1">
+                    <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                    Submitting...
+                  </span>
+                ) : '● Submit'}
               </button>
             </form>
           </div>
