@@ -292,7 +292,7 @@ const PrivacyPolicyPage = () => {
               Questions
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed">
-              If you have any questions regarding our Privacy Policy or our use of your information, call our toll free number <a href="tel:6469939010" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">(646) 993-9010</a> or email us on <a href="mailto:info@blendwise.com" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">info@blendwise.com</a>.
+              If you have any questions regarding our Privacy Policy or our use of your information, call us at <a href="tel:+17866190117" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">+1 (786) 619-0117</a> or email us on <a href="mailto:info@blendwise.com" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">info@blendwise.com</a>.
             </p>
           </div>
         </div>

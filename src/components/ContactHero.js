@@ -188,27 +188,39 @@ const ContactHero = () => {
       {/* Call to Action Section */}
       <section className="relative w-full py-16 bg-gradient-to-br from-[#8a21f0] via-[#7a1dd8] to-[#6a15c0]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
 
-            {/* Left - Call Toll Free */}
+            {/* USA Office */}
             <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInLeft hover-lift">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
-                <span className="text-3xl text-white">🎧</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-white">🇺🇸</span>
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-3">Call Toll Free</h3>
-              <p className="text-gray-600 mb-4 text-xs">For any queries that you may have.</p>
-              <a href="tel:8665097909" className="text-2xl font-bold text-gray-900 hover:text-[#8a21f0] transition-colors">
-                866-509-7909
+              <h3 className="text-lg font-black text-gray-900 mb-2">USA Office</h3>
+              <p className="text-gray-600 mb-3 text-xs leading-relaxed">10300 National Blvd<br />Los Angeles, CA 90034</p>
+              <a href="tel:+17866190117" className="text-xl font-bold text-gray-900 hover:text-[#8a21f0] transition-colors">
+                +1 (786) 619-0117
               </a>
             </div>
 
-            {/* Right - Start Live Chat */}
-            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInRight animation-delay-200 hover-lift">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4 animate-float">
-                <span className="text-3xl text-white">💬</span>
+            {/* Australia Office */}
+            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInUp animation-delay-200 hover-lift">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-white">🇦🇺</span>
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-3">Start Live Chat</h3>
-              <p className="text-gray-600 mb-4 text-xs">With one of our representatives and get all the assistance that you need.</p>
+              <h3 className="text-lg font-black text-gray-900 mb-2">Australia Office</h3>
+              <p className="text-gray-600 mb-3 text-xs leading-relaxed">Seville Grove<br />Perth, Australia</p>
+              <a href="tel:+61426676432" className="text-xl font-bold text-gray-900 hover:text-[#8a21f0] transition-colors">
+                +61 426 676 432
+              </a>
+            </div>
+
+            {/* Start Live Chat */}
+            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInRight animation-delay-400 hover-lift">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4 animate-float">
+                <span className="text-2xl text-white">💬</span>
+              </div>
+              <h3 className="text-lg font-black text-gray-900 mb-2">Start Live Chat</h3>
+              <p className="text-gray-600 mb-3 text-xs leading-relaxed">With one of our representatives<br />and get all the assistance you need.</p>
               <button onClick={() => setIsModalOpen(true)} className="bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] hover:from-[#7a1dd8] hover:to-[#2a94d8] text-white font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-xs">
                 Start Chat Now
               </button>

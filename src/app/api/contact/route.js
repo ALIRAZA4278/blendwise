@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: parseInt(process.env.SMTP_PORT),
-  secure: false,
+  secure: parseInt(process.env.SMTP_PORT) === 465,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -82,8 +82,8 @@ function getUserEmailTemplate({ name, formType, packageDetails }) {
               <!-- CTA -->
               <div style="text-align: center; margin: 32px 0 16px;">
                 <p style="margin: 0 0 16px; color: #6b7280; font-size: 14px;">Need immediate assistance?</p>
-                <a href="tel:8665097909" style="display: inline-block; background: linear-gradient(135deg, #8a21f0, #35a5e8); color: white; text-decoration: none; padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 0.5px;">
-                  Call Us: 866-509-7909
+                <a href="tel:+17866190117" style="display: inline-block; background: linear-gradient(135deg, #8a21f0, #35a5e8); color: white; text-decoration: none; padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 0.5px;">
+                  Call Us: +1 (786) 619-0117
                 </a>
               </div>
 

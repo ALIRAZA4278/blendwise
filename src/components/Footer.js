@@ -197,17 +197,42 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Office Locations & Contact */}
+      <div className="w-full py-8 bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+            {/* USA Office */}
+            <div className="text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">USA Office</h4>
+              <p className="text-[11px] text-gray-300 leading-relaxed mb-2">10300 National Blvd<br />Los Angeles, California 90034</p>
+              <a href="tel:+17866190117" className="text-[11px] text-white hover:text-[#35a5e8] transition-colors font-semibold">+1 (786) 619-0117</a>
+            </div>
+            {/* Australia Office */}
+            <div className="text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">Australia Office</h4>
+              <p className="text-[11px] text-gray-300 leading-relaxed mb-2">Seville Grove<br />Perth, Australia</p>
+              <a href="tel:+61426676432" className="text-[11px] text-white hover:text-[#35a5e8] transition-colors font-semibold">+61 426 676 432</a>
+            </div>
+            {/* Email */}
+            <div className="text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">Email Us</h4>
+              <a href="mailto:info@blendwise.com" className="text-[11px] text-gray-300 hover:text-[#35a5e8] transition-colors">info@blendwise.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Copyright Bar */}
       <div className="w-full bg-black py-3">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-white text-[10px]">
-            Copyright © Blendwise INC. All Rights Reserved 2022
+            Copyright &copy; Blendwise INC. All Rights Reserved 2022
           </p>
           <div className="flex items-center gap-3">
             <a href="/privacy-policy" className="text-white text-[10px] font-semibold hover:underline hover:text-[#35a5e8] transition-colors duration-300">
               Privacy Policy
             </a>
-            <span className="text-white text-[10px]">●</span>
+            <span className="text-white text-[10px]">&bull;</span>
             <a href="/terms-conditions" className="text-white text-[10px] font-semibold hover:underline hover:text-[#35a5e8] transition-colors duration-300">
               Terms & Conditions
             </a>

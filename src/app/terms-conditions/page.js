@@ -139,7 +139,7 @@ const TermsConditionsPage = () => {
               <div className="bg-gray-50 p-6 rounded-2xl">
                 <p className="font-semibold mb-4">1. Claim your refund specifying your concern by contacting us via any of the following three modes:</p>
                 <ul className="space-y-2 pl-6">
-                  <li>i. Toll free # <a href="tel:6469939010" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">(646) 993-9010</a></li>
+                  <li>i. Call us: <a href="tel:+17866190117" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">+1 (786) 619-0117</a></li>
                   <li>ii. Live Chat</li>
                   <li>iii. Email: <a href="mailto:info@blendwise.com" className="text-[#8a21f0] hover:text-[#35a5e8] font-semibold">info@blendwise.com</a></li>
                 </ul>
