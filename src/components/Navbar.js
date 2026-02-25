@@ -1,0 +1,228 @@
+'use client';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import QuoteModal from './QuoteModal';
+
+const Navbar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
+
+  return (
+    <nav className="absolute top-0 left-0 right-0 z-[9999] w-full animate-fadeInDown">
+      {/* Top Info Bar */}
+      <div className="w-full bg-gradient-to-r from-[#8a21f0] to-[#35a5e8] text-white py-1.5 text-[10px] hidden md:block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              10300 National Blvd, Los Angeles, CA 90034
+            </span>
+            <span className="opacity-50">|</span>
+            <span className="flex items-center gap-1">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Seville Grove, Perth, Australia
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="tel:+17866190117" className="flex items-center gap-1 hover:underline">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              USA: +1 (786) 619-0117
+            </a>
+            <span className="opacity-50">|</span>
+            <a href="tel:+61426676432" className="flex items-center gap-1 hover:underline">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              AUS: +61 426 676 432
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="w-full bg-white shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+
+            {/* Logo */}
+            <div className="flex-shrink-0 animate-scaleIn animation-delay-200">
+              <Link href="/" className="flex items-center hover-scale">
+                <Image
+                  src="/logo/blend wise.png"
+                  alt="Blendwise Logo"
+                  width={125}
+                  height={45}
+                  priority
+                  className="h-auto w-auto"
+                />
+              </Link>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center justify-center flex-1">
+              <div className="flex items-center space-x-8">
+                <Link
+                  href="/"
+                  className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
+                    pathname === '/'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
+                  }`}
+                >
+                  HOME
+                </Link>
+                <Link
+                  href="/services"
+                  className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
+                    pathname === '/services'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
+                  }`}
+                >
+                  SERVICES
+                </Link>
+                <Link
+                  href="/packages"
+                  className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
+                    pathname === '/packages'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
+                  }`}
+                >
+                  PACKAGES
+                </Link>
+                <Link
+                  href="/contact"
+                  className={`text-sm font-bold tracking-wide transition-all duration-300 hover:scale-105 ${
+                    pathname === '/contact'
+                      ? 'text-[#8a21f0]'
+                      : 'text-gray-700 hover:text-[#35a5e8]'
+                  }`}
+                >
+                  CONTACT US
+                </Link>
+              </div>
+            </div>
+
+            {/* CTA Button - Desktop */}
+            <div className="hidden lg:flex items-center animate-fadeInRight animation-delay-400">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#8a21f0] text-white font-bold text-sm px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-[#7a1dd8] animate-pulse hover-scale"
+              >
+                Get a Free Quote
+              </button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open main menu</span>
+                <div className="w-6 h-5 relative flex flex-col justify-between">
+                  <span className={`w-full h-0.5 transition-all duration-300 ${
+                    isMobileMenuOpen
+                      ? 'rotate-45 translate-y-2 bg-[#8a21f0]'
+                      : 'bg-gray-700'
+                  }`}></span>
+                  <span className={`w-full h-0.5 transition-all duration-300 ${
+                    isMobileMenuOpen
+                      ? 'opacity-0'
+                      : 'bg-gray-700'
+                  }`}></span>
+                  <span className={`w-full h-0.5 transition-all duration-300 ${
+                    isMobileMenuOpen
+                      ? '-rotate-45 -translate-y-2 bg-[#8a21f0]'
+                      : 'bg-gray-700'
+                  }`}></span>
+                </div>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-[99999] bg-white" style={{ top: 0, left: 0, width: '100vw', height: '100vh' }}>
+          {/* Close Button */}
+          <div className="absolute top-6 right-6 z-[100000]">
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 rounded-md transition-colors duration-300"
+              aria-label="Close menu"
+            >
+              <svg className="w-6 h-6 text-[#8a21f0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center justify-center h-full space-y-8 px-4">
+            <Link
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
+                pathname === '/' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
+              }`}
+            >
+              HOME
+            </Link>
+            <Link
+              href="/services"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
+                pathname === '/services' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
+              }`}
+            >
+              SERVICES
+            </Link>
+            <Link
+              href="/packages"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
+                pathname === '/packages' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
+              }`}
+            >
+              PACKAGES
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold tracking-wide transition-colors duration-300 ${
+                pathname === '/contact' ? 'text-[#8a21f0]' : 'text-gray-700 hover:text-[#35a5e8]'
+              }`}
+            >
+              CONTACT US
+            </Link>
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsModalOpen(true);
+              }}
+              className="bg-[#8a21f0] text-white font-bold text-lg px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-[#7a1dd8] mt-4"
+            >
+              Get a Free Quote
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </nav>
+  );
+};
+
+export default Navbar;

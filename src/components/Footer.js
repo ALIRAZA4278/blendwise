@@ -1,0 +1,246 @@
+'use client';
+import React, { useState } from 'react';
+import Image from 'next/image';
+
+const Footer = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    description: '',
+    agreed: false
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, formType: 'footer' }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', subject: '', description: '', agreed: false });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const pressLogos = [
+    '/main/entrepreneur.png',
+    '/main/inc.png',
+    '/main/tdw.png',
+    '/main/technasia.png',
+    '/main/forbes.png',
+    '/main/huffpost.png'
+  ];
+
+  return (
+    <footer className="relative w-full bg-white">
+      {/* Press Logos Section */}
+      <div className="w-full py-6 bg-gray-50 border-t border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {pressLogos.map((logo, index) => (
+              <div key={index} className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+                <Image
+                  src={logo}
+                  alt={`Press Logo ${index + 1}`}
+                  width={80}
+                  height={30}
+                  style={{ objectFit: 'contain' }}
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Form Section */}
+      <div className="w-full py-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+          {/* Left Side - Text */}
+          <div>
+            <h2 className="font-black text-[#8a21f0] mb-2 leading-tight" style={{ fontSize: '36px' }}>
+              In search of a quote,
+              <br />
+              simply ask
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4" style={{ fontSize: '16px' }}>
+              Whether you prefer filling out our form for a tailored response or giving us a call, <span className="font-bold text-[#8a21f0]">Blendwise INC</span> is ready to discuss your upcoming project. We're here to ensure the right person promptly connects with you.
+            </p>
+            <div className="mt-4">
+              <svg width="100" height="60" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 50 Q 40 10, 80 50 T 140 50" stroke="#d1d5db" strokeWidth="3" fill="none"/>
+                <path d="M135 45 L 145 50 L 135 55" fill="#d1d5db"/>
+              </svg>
+            </div>
+          </div>
+
+          {/* Right Side - Form */}
+          <div className="bg-white rounded-xl shadow-xl p-4">
+            <form onSubmit={handleSubmit} className="space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone No."
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400"
+                />
+              </div>
+
+              <textarea
+                name="description"
+                placeholder="To help us understand better, enter a brief description about your project."
+                value={formData.description}
+                onChange={handleChange}
+                rows="3"
+                className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8a21f0] text-gray-700 placeholder-gray-400 resize-none"
+              ></textarea>
+
+              <label className="flex items-start gap-1.5 text-[10px] text-gray-700">
+                <input
+                  type="checkbox"
+                  name="agreed"
+                  checked={formData.agreed}
+                  onChange={handleChange}
+                  required
+                  className="mt-0.5 w-3 h-3 text-[#8a21f0] border-gray-300 rounded focus:ring-[#8a21f0]"
+                />
+                <span>
+                  I have read & fully understood and agreed to the{' '}
+                  <a href="/terms-conditions" className="text-[#8a21f0] font-semibold hover:underline">Terms of Use</a> and the{' '}
+                  <a href="/privacy-policy" className="text-[#8a21f0] font-semibold hover:underline">Privacy Policy</a>
+                </span>
+              </label>
+
+              {status === 'success' && (
+                <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-[10px] text-center font-semibold">
+                  Submitted successfully! Check your email for confirmation.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-[10px] text-center font-semibold">
+                  Something went wrong. Please try again.
+                </div>
+              )}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#8a21f0] hover:bg-[#7a1dd8] text-white font-bold py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl uppercase text-[10px] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {loading ? (
+                  <span className="flex items-center justify-center gap-1">
+                    <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                    Submitting...
+                  </span>
+                ) : '● Submit'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Office Locations & Contact */}
+      <div className="w-full py-8 bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+            {/* USA Office */}
+            <div className="text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">USA Office</h4>
+              <p className="text-[11px] text-gray-300 leading-relaxed mb-2">10300 National Blvd<br />Los Angeles, California 90034</p>
+              <a href="tel:+17866190117" className="text-[11px] text-white hover:text-[#35a5e8] transition-colors font-semibold">+1 (786) 619-0117</a>
+            </div>
+            {/* Australia Office */}
+            <div className="text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">Australia Office</h4>
+              <p className="text-[11px] text-gray-300 leading-relaxed mb-2">Seville Grove<br />Perth, Australia</p>
+              <a href="tel:+61426676432" className="text-[11px] text-white hover:text-[#35a5e8] transition-colors font-semibold">+61 426 676 432</a>
+            </div>
+            {/* Email */}
+            <div className="text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">Email Us</h4>
+              <a href="mailto:info@blendwisesolutions.com" className="text-[11px] text-gray-300 hover:text-[#35a5e8] transition-colors">info@blendwisesolutions.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Copyright Bar */}
+      <div className="w-full bg-black py-3">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
+          <p className="text-white text-[10px]">
+            Copyright &copy; Blendwise INC. All Rights Reserved 2022
+          </p>
+          <div className="flex items-center gap-3">
+            <a href="/privacy-policy" className="text-white text-[10px] font-semibold hover:underline hover:text-[#35a5e8] transition-colors duration-300">
+              Privacy Policy
+            </a>
+            <span className="text-white text-[10px]">&bull;</span>
+            <a href="/terms-conditions" className="text-white text-[10px] font-semibold hover:underline hover:text-[#35a5e8] transition-colors duration-300">
+              Terms & Conditions
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
