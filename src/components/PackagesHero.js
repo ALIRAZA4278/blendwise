@@ -978,7 +978,7 @@ const PackagesHero = () => {
               <div className="relative flex items-center justify-end animate-fadeInRight animation-delay-400">
                 <div className="relative w-full max-w-[700px] h-[400px] md:h-[500px] lg:h-[600px] animate-float">
                   <Image
-                    src="/packages-main.png"
+                    src="/packages-hero.png"
                     alt="Digital Experiences"
                     fill
                     priority
