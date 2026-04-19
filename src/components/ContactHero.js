@@ -188,7 +188,7 @@ const ContactHero = () => {
       {/* Call to Action Section */}
       <section className="relative w-full py-16 bg-gradient-to-br from-[#8a21f0] via-[#7a1dd8] to-[#6a15c0]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-stretch">
 
             {/* USA Office */}
             <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInLeft hover-lift">
@@ -211,6 +211,18 @@ const ContactHero = () => {
               <p className="text-gray-600 mb-3 text-xs leading-relaxed">Seville Grove<br />Perth, Australia</p>
               <a href="tel:+61426676432" className="text-xl font-bold text-gray-900 hover:text-[#8a21f0] transition-colors">
                 +61 426 676 432
+              </a>
+            </div>
+
+            {/* UK Office */}
+            <div className="text-center bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-fadeInRight animation-delay-300 hover-lift">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8a21f0] to-[#35a5e8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-white">🇬🇧</span>
+              </div>
+              <h3 className="text-lg font-black text-gray-900 mb-2">UK Office</h3>
+              <p className="text-gray-600 mb-3 text-xs leading-relaxed">Seven Kings, Ilford IG3 8RW<br />United Kingdom</p>
+              <a href="tel:+447441474296" className="text-xl font-bold text-gray-900 hover:text-[#8a21f0] transition-colors">
+                +44 7441 474296
               </a>
             </div>
 

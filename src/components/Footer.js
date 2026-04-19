@@ -200,12 +200,18 @@ const Footer = () => {
       {/* Office Locations & Contact */}
       <div className="w-full py-8 bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-white">
             {/* USA Office */}
             <div className="text-center md:text-left">
               <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">USA Office</h4>
               <p className="text-[11px] text-gray-300 leading-relaxed mb-2">10300 National Blvd<br />Los Angeles, California 90034</p>
               <a href="tel:+17866190117" className="text-[11px] text-white hover:text-[#35a5e8] transition-colors font-semibold">+1 (786) 619-0117</a>
+            </div>
+            {/* UK Office */}
+            <div className="text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#35a5e8] mb-3">UK Office</h4>
+              <p className="text-[11px] text-gray-300 leading-relaxed mb-2">Seven Kings, Ilford IG3 8RW<br />United Kingdom</p>
+              <a href="tel:+447441474296" className="text-[11px] text-white hover:text-[#35a5e8] transition-colors font-semibold">+44 7441 474296</a>
             </div>
             {/* Australia Office */}
             <div className="text-center md:text-left">

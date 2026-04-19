@@ -182,7 +182,7 @@ const PackagesHero = () => {
       id: 7,
       name: 'Basic Website Package',
       subtitle: 'Perfect starter website for small businesses and startups',
-      price: 250,
+      price: 350,
       originalPrice: 500,
       features: [
         'Complete Website Design',
